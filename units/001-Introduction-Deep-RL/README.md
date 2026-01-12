@@ -5,7 +5,7 @@
 Deep Reinforcement Learning (Deep RL) is a subfield of machine learning where an **agent** learns to make decisions by performing **actions** in an **environment** to maximize a **reward**.
 
 * **The Goal:** Learn an optimal strategy (Policy) to get the most rewards over time.
-* **Hands-on:** In this unit, we train a `LunarLander-v2` agent using the **Stable Baselines3** library.
+* **Hands-on:** In this unit, we train a `LunarLander-v2` agent using the `**Stable Baselines3**`library.
 
 ## 1.2 What is RL?
 
