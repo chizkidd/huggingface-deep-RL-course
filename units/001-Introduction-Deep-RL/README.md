@@ -27,21 +27,33 @@ The RL process is a loop that happens at each time step :
 ### Key Concepts:
 
 * **Markov Property:** The agent only needs the current state to decide the next action; the history of past states and actions is irrelevant.
-> _The future is independent of the past given the present."_
-> _The memoryless property of a stochastic process, which means that its future evolution is independent of its history._
+  > _The future is independent of the past given the present."_
+  > _The memoryless property of a stochastic process, which means that its future evolution is independent of its history._
 
 
-* **Observations vs. States:**
-> Observations/States are the information our agent gets from the environment.
+* **Observations vs. States:** Observations/States are the information our agent gets from the environment.
   - **State, $s$:** A complete description of the state of the world. No hidden information. (e.g., Chess, complete board view).
   - **Observation, $o$:** A partial description of the state of the world. In a partially observed environment (e.g., Super Mario where you only see the current screen).
-    > In this course, we use the term "state" to denote both state and observation, but we will make the distinction in implementations.
+    
+_Note: In this course, we use the term "state" to denote both state and observation, but we will make the distinction in implementations._
 
 
-* **Action Space:**
-> The Action space is the set of all possible actions in an environment.
-  - **Discrete:** Finite number of actions (Up, Down, Left, Right).
-  - **Continuous:** Infinite possibilities (Steering wheel angle from -180° to 180°).
+* **Action Space:** The Action space is the set of all possible actions in an environment.
+  - **Discrete:** Finite number of possible actions (Up, Down, Left, Right).
+  - **Continuous:** Infinite number of possible actions (Steering wheel angle from -180° to 180°).
+
+
+* **Rewards:**
+
+  - The reward is the only feedback for the agent. The cumulative reward at each time step  can be written as: $$G_t = R_{t+1} + R_{t+2} + R_{t+3} + ...$$
+  - However, in reality, rewards that come sooner are more likely to happen and more predictable than long-term future rewards. We use **discounting** to account for this.
+
+* **The Discount Rate ($\gamma$):** We define a discount rate called **gamma ()**. It must be between 0 and 1 (typically 0.95 to 0.99).
+  - **Larger  (closer to 1):** Smaller discount; the agent cares more about long-term rewards.
+  - **Smaller  (closer to 0):** Larger discount; the agent cares more about short-term rewards (the "nearest cheese").
+
+Each reward is discounted by gamma to the exponent of the time step: $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$
+This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
 
 ## 1.4 Tasks: Episodic vs. Continuing
