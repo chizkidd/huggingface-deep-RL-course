@@ -1,0 +1,13 @@
+# Core RL Libraries
+gymnasium[box2d,atari,accept-rom-license]  # The standard RL environment API
+stable-baselines3[extra]                   # State-of-the-art RL algorithms
+huggingface_sb3                            # Integration with HF Hub
+huggingface_hub                            # For pushing models to the hub
+
+# Helper Libraries
+pyyaml
+pybullet
+py-spy
+moviepy                                    # For rendering videos of your agents
+pygame                                     # For local environment visualization
+tensorboard                                # For tracking training progress
