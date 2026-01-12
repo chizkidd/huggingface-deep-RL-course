@@ -80,7 +80,7 @@ Now that we have learned the RL framework, how do we solve the RL problem? In ot
 The **Policy $\pi$** is the brain of our Agent. It is the function that tells us what action to take given the state we are in. It defines ***the agent's behavior*** at a given time.
 ```mermaid
 graph LR
-    S(State) --> P["Policy π(s)"]
+    S(State) --> P["π(State)"]
     P --> A(Action)
 ```
 
