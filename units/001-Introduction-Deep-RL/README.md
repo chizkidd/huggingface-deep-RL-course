@@ -86,8 +86,8 @@ graph LR
 
 * **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that ***maximizes the expected return*** when the agent acts according to it. We find this $\pi^*$ ***through training.*** There are two main approaches to training our agent to find this optimal policy:
 
-1. **Policy-Based Methods:** Directly teach the agent which action to take, given the current state.
-2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states.
+1. **Policy-Based Methods:** Directly teach the agent which ***action to take,*** given the current state.
+2. **Value-Based Methods:** Indirectly teach the agent ***which state is more valuable*** and then take the action that ***leads to the most valuable states.***
 
    
 > To maximize the expected return, we must find the **Optimal Policy ($\pi^*$)**.
@@ -117,9 +117,12 @@ graph LR
 ```
 
 ### Approach B: Value-Based Methods
-The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
+The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: ***"Take the action that leads to the state with the highest value."***
 - **Goal:** Map each state to the expected value of being in that state.
 - **Decision Making:** The agent doesn't "know" which action is best; it simply looks at the surrounding states and moves toward the one with the highest value ($V(s)$ or $Q(s,a)$ ).
+$$v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots | S_t = s]$$
+$`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \dots | S_t = s]`$
+
 
 ### Reinforcement Learning: Comparison of Approaches
 
