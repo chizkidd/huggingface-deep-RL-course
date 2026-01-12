@@ -222,11 +222,66 @@ We speak about **Deep Reinforcement Learning** because we introduce **deep neura
 
 ## 1.9 Glossary
 
+### Short Version
 * **Agent:** The AI learner/decision maker.
 * **Environment:** The world the agent lives in.
 * **Policy ($\pi$):** The "brain" of the agent—the strategy it follows.
 * **Value Function:** Tells us how "good" it is for the agent to be in a certain state.
 * **Gamma ($\gamma$):** The discount rate (usually between 0.95 and 0.99).
+
+### Long Version
+#### **Agent**
+
+An agent learns to **make decisions by trial and error, receiving rewards and punishments from its surroundings.**
+
+#### **Environment**
+
+An environment is a simulated world **where an agent can learn by interacting with it.**
+
+#### **Markov Property**
+
+The principle that the action taken by our agent is **conditional solely on the present state and is independent of all past states and actions.**
+
+#### **Observations / State**
+
+* **State:** A complete description of the state of the world.
+* **Observation:** A partial description of the state of the environment/world.
+
+#### **Actions**
+
+* **Discrete Actions:** A finite number of actions, such as Left, Right, Up, and Down.
+* **Continuous Actions:** An infinite possibility of actions (e.g., in the case of self-driving cars, the driving scenario has an infinite possibility of actions occurring.).
+
+#### **Rewards and Discounting**
+
+* **Rewards:** The fundamental feedback factor in RL. It tells the agent whether an action was good or bad.
+* RL algorithms are focused on maximizing the **cumulative reward.**
+* **Reward Hypothesis:** The idea that all RL problems can be formulated as the maximization of (cumulative) return.
+* **Discounting:** The process of weighting immediate rewards more heavily than future (long-term) rewards because they are more predictable and certain.
+
+#### **Tasks**
+
+* **Episodic:** Tasks that have a clear starting point and an ending point (a terminal state).
+* **Continuous:** Tasks that have a starting point but no ending point.
+
+#### **Exploration vs. Exploitation Trade-Off**
+
+* **Exploration:** Trying random actions to discover more about the environment and find potential rewards.
+* **Exploitation:** Using existing knowledge of the environment to take actions that yield the maximum known rewards.
+* **Trade-Off:** The balance required to decide how much to explore vs. how much to exploit known information.
+
+#### **Policy**
+
+* **Policy ():** Often called the "agent's brain." It is a function that tells the agent what action to take, given the current state.
+* **Optimal Policy ():** The specific policy that **maximizes the expected return** when an agent acts according to it. It is learned through _training._
+
+#### **Policy-Based Methods**
+
+An approach where the policy is learned directly. It maps each state to the best corresponding action at that state or a probability distribution over the set of possible actions at that state.
+
+#### **Value-Based Methods**
+
+An approach where, instead of training a policy, we train a **value function** that maps each state to the expected value of being in that state.
 
 ---
 
