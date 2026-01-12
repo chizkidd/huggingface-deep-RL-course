@@ -43,17 +43,15 @@ _Note: In this course, we use the term "state" to denote both state and observat
   - **Continuous:** Infinite number of possible actions (Steering wheel angle from -180° to 180°).
 
 
-* **Rewards:**
+* **Rewards and Discounting:**
 
   - The reward is the only feedback for the agent. The cumulative reward at each time step  can be written as: $$G_t = R_{t+1} + R_{t+2} + R_{t+3} + ...$$
   - However, in reality, rewards that come sooner are more likely to happen and more predictable than long-term future rewards. We use **discounting** to account for this.
+  - Each reward is discounted by gamma to the exponent of the time step: $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$. This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
 * **The Discount Rate ($\gamma$):** We define a discount rate called **gamma ()**. It must be between 0 and 1 (typically 0.95 to 0.99).
   - **Larger  (closer to 1):** Smaller discount; the agent cares more about long-term rewards.
   - **Smaller  (closer to 0):** Larger discount; the agent cares more about short-term rewards (the "nearest cheese").
-
-Each reward is discounted by gamma to the exponent of the time step: $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$
-This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
 
 ## 1.4 Tasks: Episodic vs. Continuing
