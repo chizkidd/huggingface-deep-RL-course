@@ -73,11 +73,38 @@ A task is an ***instance*** of a Reinforcement Learning problem. We can have two
   - <u>Exploration:</u> Try restaurants you never went to before, with the risk of having a bad experience but the probable opportunity of a fantastic experience.
 
 ## 1.6 Two Main Approaches
+Now that we have learned the RL framework, how do we solve the RL problem? In other words, how do we build an RL agent that can select the actions that maximize its expected cumulative reward?
 
-To find the **Optimal Policy ($\pi^*$)**, we use two main methods:
+### The Policy : The Agent's Brain
 
-1. **Policy-Based Methods:** The agent learns the policy function directly. It maps states to actions (or probabilities of actions).
-2. **Value-Based Methods:** The agent learns a **Value Function** ($V(s)$ or $Q(s,a)$ ) that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
+The **Policy $\pi$** is the brain of our Agent. It is the function that tells us what action to take given the state we are in. It defines the agent's behavior at a given time.
+
+* **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that maximizes the expected return when the agent acts according to it. We find this $\pi^*$ through training. There are two main approaches to training our agent to find this optimal policy:
+
+1. **Policy-Based Methods:** Directly teach the agent which action to take given the current state.
+2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states.
+3. 
+  > To maximize the expected return, we must find the **Optimal Policy ($\pi^*$)**.
+
+### Approach A: Policy-Based Methods
+The agent learns a policy function directly. The policy is the "brain" that maps states to actions (or probabilities of actions).
+- **Deterministic Policy:** Always returns the same action for a specific state ($a = \pi(s)$).
+- **Stochastic Policy:** Returns a probability distribution over actions ($\pi(a|s) = P[A = a|S = s]$).
+
+### Approach B: Value-Based Methods
+The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
+- **Goal:** Map each state to the expected value of being in that state.
+- **Decision Making:** The agent doesn't "know" which action is best; it simply looks at the surrounding states and moves toward the one with the highest value ($V(s)$ or $Q(s, a)$).
+
+### Reinforcement Learning: Comparison of Approaches
+
+| Feature | Policy-Based Methods | Value-Based Methods |
+| :--- | :--- | :--- |
+| **What is learned?** | The Policy ($\pi(s)$) | The Value Function ($V(s)$ or $Q(s, a)$) |
+| **Output** | Best Action (or probability distribution) | Value/Score of a State or Action |
+| **Logic** | "In this state, do this." | "This state is worth $X$ points." |
+| **Action Selection** | The policy directly outputs the action. | The agent chooses actions leading to the highest value states. |
+| **Example Algorithms** | Policy Gradients (e.g., PPO, REINFORCE) | Q-Learning, Deep Q-Networks (DQN) |
 
 ## 1.7 The "Deep" in Deep RL
 
