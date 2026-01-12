@@ -47,7 +47,7 @@ _Note: In this course, we use the term "state" to denote both state and observat
 
   - The reward is the only feedback for the agent. The cumulative reward at each time step  can be written as: $$G_t = R_{t+1} + R_{t+2} + R_{t+3} + ...$$
   - However, in reality, rewards that come sooner are more likely to happen and more predictable than long-term future rewards. We use **discounting** to account for this.
-  - Each reward is discounted by gamma to the exponent of the time step: $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$.
+  - Each reward is discounted by gamma to the exponent of the time step: $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$
   - This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
 * **The Discount Rate ($\gamma$):** We define a discount rate called **gamma ()**. It must be between 0 and 1 (typically 0.95 to 0.99).
