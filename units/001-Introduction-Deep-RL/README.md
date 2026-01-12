@@ -59,14 +59,18 @@ _Note: In this course, we use the term "state" to denote both state and observat
 
 ## 1.4 Tasks: Episodic vs. Continuing
 
-* **Episodic Tasks:** Have a clear starting and ending point (e.g., a game of Pong).
-* **Continuing Tasks:** Tasks that continue forever without a terminal state (e.g., automated stock trading).
+A task is an ***instance*** of a Reinforcement Learning problem. We can have two types of tasks: episodic and continuing.
+* **Episodic Tasks:** Have a clear starting and ending point ***(a terminal state). This creates an episode:*** a list of States, Actions, rewards and new States (e.g., a game of Pong).
+* **Continuing Tasks:** Tasks that continue forever without a terminal state (e.g., automated stock trading). In this case, the agent must ***learn how to choose the best actions and simultaneously interact with the environment.***
 
 ## 1.5 The Exploration/Exploitation Trade-off
 
-* **Exploration:** Trying random actions to find more information about the environment (searching for a bigger cheese).
+* **Exploration:** Trying random actions to find more information about the environment (a mouse searching for a bigger cheese [+1000] rather than the nearest one [+1]).
 * **Exploitation:** Using known information to maximize rewards (eating the small cheese right in front of you).
 * **The Challenge:** Finding the right balance so the agent doesn't get stuck in "local optima."
+* **Example: Choosing a Restaurant**
+  - <u>Exploitation:</u> You go to the same one that you know is good every day and take the risk to miss another better restaurant.
+  - <u>Exploration:</u> Try restaurants you never went to before, with the risk of having a bad experience but the probable opportunity of a fantastic experience.
 
 ## 1.6 Two Main Approaches
 
