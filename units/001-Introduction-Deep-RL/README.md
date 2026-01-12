@@ -12,7 +12,7 @@ Deep Reinforcement Learning (Deep RL) is a subfield of machine learning where an
 >Reinforcement learning is a framework for solving control tasks (also called decision problems) by building agents that learn from the environment by interacting with it through trial and error and receiving rewards (positive or negative) as unique feedback.
 
 * **The Analogy:** Like a child learning to play a video game. They press buttons (actions), see the score increase (reward) or lose a life (punishment), and adjust their behavior accordingly.
-* **Reward Hypothesis:** All goals can be described as the maximization of the expected cumulative reward.
+* **Reward Hypothesis:** All goals can be described as the _maximization of the expected return (expected cumulative reward)._
 
 ## 1.3 The RL Framework
 
