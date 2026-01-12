@@ -27,22 +27,21 @@ The RL process is a loop that happens at each time step :
 ### Key Concepts:
 
 * **Markov Property:** The agent only needs the current state to decide the next action; the history of past states and actions is irrelevant.
-  > _The future is independent of the past given the present."_
-  > _The memoryless property of a stochastic process, which means that its future evolution is independent of its history._
+> _The future is independent of the past given the present."_
+> _The memoryless property of a stochastic process, which means that its future evolution is independent of its history._
 
 
 * **Observations vs. States:**
-  > Observations/States are the information our agent gets from the environment.
+> Observations/States are the information our agent gets from the environment.
   - **State, $s$:** A complete description of the state of the world. No hidden information. (e.g., Chess, complete board view).
   - **Observation, $o$:** A partial description of the state of the world. In a partially observed environment (e.g., Super Mario where you only see the current screen).
-  > In this course, we use the term "state" to denote both state and observation, but we will make the distinction in implementations.
+    > In this course, we use the term "state" to denote both state and observation, but we will make the distinction in implementations.
 
 
 * **Action Space:**
-  >The Action space is the set of all possible actions in an environment.
+> The Action space is the set of all possible actions in an environment.
   - **Discrete:** Finite number of actions (Up, Down, Left, Right).
   - **Continuous:** Infinite possibilities (Steering wheel angle from -180° to 180°).
-
 
 
 ## 1.4 Tasks: Episodic vs. Continuing
