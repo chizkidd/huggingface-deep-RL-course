@@ -120,8 +120,8 @@ graph LR
 The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: ***"Take the action that leads to the state with the highest value."***
 - **Goal:** Map each state to the expected value of being in that state.
 - **Decision Making:** The agent doesn't "know" which action is best; it simply looks at the surrounding states and moves toward the one with the highest value ($V(s)$ or $Q(s,a)$ ).
-$$v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots | S_t = s]$$
-$`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \dots | S_t = s]`$
+
+$$`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \dots | S_t = s]`$$
 
 
 ### Reinforcement Learning: Comparison of Approaches
