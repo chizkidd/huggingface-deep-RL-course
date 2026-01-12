@@ -82,8 +82,7 @@ The **Policy $\pi$** is the brain of our Agent. It is the function that tells us
 * **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that maximizes the expected return when the agent acts according to it. We find this $\pi^*$ through training. There are two main approaches to training our agent to find this optimal policy:
 
 1. **Policy-Based Methods:** Directly teach the agent which action to take given the current state.
-2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states.
-3. 
+2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states. 
   > To maximize the expected return, we must find the **Optimal Policy ($\pi^*$)**.
 
 ### Approach A: Policy-Based Methods
@@ -94,13 +93,13 @@ The agent learns a policy function directly. The policy is the "brain" that maps
 ### Approach B: Value-Based Methods
 The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
 - **Goal:** Map each state to the expected value of being in that state.
-- **Decision Making:** The agent doesn't "know" which action is best; it simply looks at the surrounding states and moves toward the one with the highest value ($V(s)$ or $Q(s, a)$).
+- **Decision Making:** The agent doesn't "know" which action is best; it simply looks at the surrounding states and moves toward the one with the highest value ($V(s)$ or $Q(s,a)$ ).
 
 ### Reinforcement Learning: Comparison of Approaches
 
 | Feature | Policy-Based Methods | Value-Based Methods |
 | :--- | :--- | :--- |
-| **What is learned?** | The Policy ($\pi(s)$) | The Value Function ($V(s)$ or $Q(s, a)$) |
+| **What is learned?** | The Policy ($\pi(s)$) | The Value Function ($V(s)$ or $Q(s,a)$ ) |
 | **Output** | Best Action (or probability distribution) | Value/Score of a State or Action |
 | **Logic** | "In this state, do this." | "This state is worth $X$ points." |
 | **Action Selection** | The policy directly outputs the action. | The agent chooses actions leading to the highest value states. |
