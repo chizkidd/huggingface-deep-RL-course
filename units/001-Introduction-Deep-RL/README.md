@@ -141,21 +141,21 @@ $`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \
 
 ## 1.7 The "Deep" in Deep RL
 
-* **Classic RL:** Uses a "lookup table" (Q-Table) to store values for every possible state and action. This doesn't scale to complex games with billions of states.
-* 
+* **Classic RL:** Uses a "lookup table" (Q-Table) to store values for every possible state and action. This doesn't scale to complex games with billions of states. Q-Learning is shown below:
+
 ```mermaid
 graph LR
-    S[State] --> Table{Q-Table}
+    S[State] --> Table(("Q-Table"))
     A[Action] --> Table
     Table --> QV["Q-Value: Q(s, a)"]
     
     style Table fill:#f9f,stroke:#333,stroke-width:2px
 ```
-* **Deep RL:** Uses **Deep Neural Networks,** hence the name “deep,” as function approximators to predict the best action or value without needing a table. In the next unit, we’ll learn about two value-based algorithms: Q-Learning (classic Reinforcement Learning) and then Deep Q-Learning.
-* 
+* **Deep RL:** Uses **Deep Neural Networks,** hence the name “deep,” as function approximators to predict the best action or value without needing a table. In the next unit, we’ll learn about two value-based algorithms: Q-Learning (classic Reinforcement Learning) and then Deep Q-Learning. Deep Q-Learning is shown below:
+  
 ```mermaid
-graph TD
-    S[State] --> DNN["Deep Q Neural Network"]
+graph LR
+    S[State] --> DNN(("Deep Q Neural Network"))
     DNN --> Q1["Q-Value (Action 1)"]
     DNN --> Q2["Q-Value (Action 2)"]
     DNN --> Q3["Q-Value (Action 3)"]
