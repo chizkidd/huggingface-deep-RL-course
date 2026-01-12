@@ -151,7 +151,7 @@ graph LR
     
     style Table fill:#f9f,stroke:#333,stroke-width:2px
 ```
-* **Deep RL:** Uses **Deep Neural Networks,** hence the name “deep,” as function approximators to predict the best action or value without needing a table. In the next unit, we’ll learn about two value-based algorithms: Q-Learning (classic Reinforcement Learning) and then Deep Q-Learning. Deep Q-Learning is shown below:
+* **Deep RL:** Uses **Deep Neural Networks,** hence the name “deep,” as function approximators to predict the best action or value without needing a table. Deep Q-Learning is shown below:
   
 ```mermaid
 graph LR
@@ -162,6 +162,14 @@ graph LR
 
     style DNN fill:#bbf,stroke:#333,stroke-width:2px
 ```
+
+In the next unit, we'll learn about two value-based algorithms: **Q-Learning** (classic Reinforcement Learning) and then **Deep Q-Learning**.
+
+You'll see the difference is that:
+
+* In the **first approach (Q-Learning)**, we use a traditional algorithm to create a **Q table** that helps us find what action to take for each state.
+* In the **second approach (Deep Q-Learning)**, we will use a **Neural Network** (to approximate the Q value).
+
 
 | Feature | Classic Reinforcement Learning | Deep Reinforcement Learning |
 | :--- | :--- | :--- |
