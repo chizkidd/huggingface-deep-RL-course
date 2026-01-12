@@ -84,9 +84,9 @@ graph LR
     P --> A(Action)
 ```
 
-* **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that maximizes the expected return when the agent acts according to it. We find this $\pi^*$ through training. There are two main approaches to training our agent to find this optimal policy:
+* **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that ***maximizes the expected return*** when the agent acts according to it. We find this $\pi^*$ ***through training.*** There are two main approaches to training our agent to find this optimal policy:
 
-1. **Policy-Based Methods:** Directly teach the agent which action to take given the current state.
+1. **Policy-Based Methods:** Directly teach the agent which action to take, given the current state.
 2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states.
 
    
@@ -95,7 +95,26 @@ graph LR
 ### Approach A: Policy-Based Methods
 The agent learns a policy function directly. The policy is the "brain" that maps states to actions (or probabilities of actions).
 - **Deterministic Policy:** Always returns the same action for a specific state ($a = \pi(s)$ ).
+```mermaid
+graph LR
+    S["State (s₀)"] --> P["Policy π(s₀)"]
+    P --> A["Action (a₀): Move Right"]
+    
+    style P fill:#f9f,stroke:#333,stroke-width:2px
+```
 - **Stochastic Policy:** Returns a probability distribution over actions ($\pi(a|s) = P[A = a|S = s]$).
+```mermaid
+graph LR
+    S["State (s₀)"] --> P["Policy π(A|s₀)"]
+    P --> Dist["Probability Distribution P[A|s₀]"]
+    
+    Dist --> L["Left: 0.1"]
+    Dist --> R["Right: 0.7"]
+    Dist --> J["Jump: 0.2"]
+
+    style P fill:#bbf,stroke:#333,stroke-width:2px
+    style Dist stroke-dasharray: 5 5
+```
 
 ### Approach B: Value-Based Methods
 The agent learns a **Value Function,** ($V(s)$ or $Q(s,a)$ ) instead of a policy, that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
