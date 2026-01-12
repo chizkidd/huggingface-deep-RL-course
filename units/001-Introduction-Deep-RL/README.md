@@ -78,6 +78,7 @@ Now that we have learned the RL framework, how do we solve the RL problem? In ot
 ### The Policy : The Agent's Brain
 
 The **Policy $\pi$** is the brain of our Agent. It is the function that tells us what action to take given the state we are in. It defines ***the agent's behavior*** at a given time.
+
 ```mermaid
 graph LR
     S(State) --> P["π(State)"]
@@ -95,6 +96,7 @@ graph LR
 ### Approach A: Policy-Based Methods
 The agent learns a policy function directly. The policy is the "brain" that maps states to actions (or probabilities of actions).
 - **Deterministic Policy:** Always returns the same action for a specific state ($a = \pi(s)$ ).
+  
 ```mermaid
 graph LR
     S["State (s₀)"] --> P["Policy π(s₀)"]
@@ -103,6 +105,7 @@ graph LR
     style P fill:#f9f,stroke:#333,stroke-width:2px
 ```
 - **Stochastic Policy:** Returns a probability distribution over actions ($\pi(a|s) = P[A = a|S = s]$).
+  
 ```mermaid
 graph LR
     S["State (s₀)"] --> P["Policy π(A|s₀)"]
@@ -130,7 +133,7 @@ $`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \
 
 | Feature | Policy-Based Methods | Value-Based Methods |
 | :--- | :--- | :--- |
-| **What is learned?** | The Policy ($\pi(s)$) | The Value Function ($V(s)$ or $Q(s,a)$ ) |
+| **What is learned?** | The Policy ($\pi(s)$ ) | The Value Function ($V(s)$ or $Q(s,a)$ ) |
 | **Output** | Best Action (or probability distribution) | Value/Score of a State or Action |
 | **Logic** | "In this state, do this." | "This state is worth $X$ points." |
 | **Action Selection** | The policy directly outputs the action. | The agent chooses actions leading to the highest value states. |
@@ -139,7 +142,32 @@ $`v_{\pi}(s) = \mathbb{E}_{\pi} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \
 ## 1.7 The "Deep" in Deep RL
 
 * **Classic RL:** Uses a "lookup table" (Q-Table) to store values for every possible state and action. This doesn't scale to complex games with billions of states.
-* **Deep RL:** Uses **Deep Neural Networks** as function approximators to predict the best action or value without needing a table.
+* 
+```mermaid
+graph LR
+    S[State] --> Table{Q-Table}
+    A[Action] --> Table
+    Table --> QV["Q-Value: Q(s, a)"]
+    
+    style Table fill:#f9f,stroke:#333,stroke-width:2px
+```
+* **Deep RL:** Uses **Deep Neural Networks,** hence the name “deep,” as function approximators to predict the best action or value without needing a table. In the next unit, we’ll learn about two value-based algorithms: Q-Learning (classic Reinforcement Learning) and then Deep Q-Learning.
+* 
+```mermaid
+graph TD
+    S[State] --> DNN["Deep Q Neural Network"]
+    DNN --> Q1["Q-Value (Action 1)"]
+    DNN --> Q2["Q-Value (Action 2)"]
+    DNN --> Q3["Q-Value (Action 3)"]
+
+    style DNN fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+| Feature | Classic Reinforcement Learning | Deep Reinforcement Learning |
+| :--- | :--- | :--- |
+| **Technology** | Uses traditional algorithms and data structures (like Q-Tables). | Uses Deep Neural Networks (CNNs, RNNs, Transformers, etc.). |
+| **Scalability** | Good for environments with small state spaces. | Necessary for complex environments with large or continuous state spaces (like video games or robotics). |
+| **Feature Engineering** | Hand-crafted features often required. | Neural networks automatically learn features from raw input (like pixels). |
 
 ## 1.8 Summary
 
