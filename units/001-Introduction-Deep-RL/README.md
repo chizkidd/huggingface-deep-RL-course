@@ -45,7 +45,7 @@ _Note: In this course, we use the term "state" to denote both state and observat
 
 * **Rewards and Discounting:**
 
-  - The reward is the only feedback for the agent. The cumulative reward at each time step  can be written as:
+  - The reward is ***the only feedback*** for the agent. It lets our agent know ***if the action taken was good or not.*** The cumulative reward at each time step $t$ can be written as:
       > $$G_t = R_{t+1} + R_{t+2} + R_{t+3} + ...$$
   - However, in reality, rewards that come sooner are more likely to happen and more predictable than long-term future rewards. We use **discounting** to account for this.
   - Each reward is discounted by gamma to the exponent of the time step:
@@ -53,8 +53,8 @@ _Note: In this course, we use the term "state" to denote both state and observat
   - This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
 * **The Discount Rate ($\gamma$):** We define a discount rate called **gamma ()**. It must be between 0 and 1 (typically 0.95 to 0.99).
-  - **Larger  (closer to 1):** Smaller discount; the agent cares more about long-term rewards.
-  - **Smaller  (closer to 0):** Larger discount; the agent cares more about short-term rewards (the "nearest cheese").
+  - **Larger $\gamma$ (closer to 1):** Smaller discount; the agent cares more about long-term rewards.
+  - **Smaller $\gamma$ (closer to 0):** Larger discount; the agent cares more about short-term rewards (the "nearest cheese to the mouse").
 
 
 ## 1.4 Tasks: Episodic vs. Continuing
