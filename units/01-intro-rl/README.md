@@ -74,11 +74,8 @@ To find the **Optimal Policy ()**, we use two main methods:
 
 ---
 
-[Introduction to Deep Reinforcement Learning | Deep RL Course](https://www.youtube.com/watch?v=q0BiUn5LiBc)
-
+## (https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white) Introduction to Deep Reinforcement Learning | Deep RL Course
 [![Watch the video](https://img.youtube.com/vi/q0BiUn5LiBc/0.jpg)](https://www.youtube.com/watch?v=q0BiUn5LiBc)
 *Click the image above to watch the Unit 1 Introduction*
-
-[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=q0BiUn5LiBc)
 
 This video covers the foundational concepts of the RL loop, the reward hypothesis, and the difference between policy-based and value-based methods mentioned in your notes.
