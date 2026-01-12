@@ -18,20 +18,21 @@ Deep Reinforcement Learning (Deep RL) is a subfield of machine learning where an
 
 The RL process is a loop that happens at each time step :
 
-1. **State ():** The agent receives the current state from the environment.
-2. **Action ():** The agent takes an action based on that state.
-3. **Reward ():** The environment gives a reward.
-4. **Next State ():** The environment transitions to a new state.
+1. **State ($S_t$):** The agent receives the current state from the environment.
+2. **Action ($A_t$):** The agent takes an action based on that state.
+3. **Reward ($R_{t+1}$):** The environment gives a reward.
+4. **Next State ($S_{t+1}$):** The environment transitions to a new state.
 
 ### Key Concepts:
 
 * **Markov Property:** The agent only needs the current state to decide the next action; the history of past states is irrelevant.
-* **Observations vs. States:** - **State:** A complete description of the world (e.g., Chess).
-* **Observation:** A partial description (e.g., Super Mario where you only see the current screen).
+* **Observations vs. States:**
+  - **State:** A complete description of the world (e.g., Chess).
+  - **Observation:** A partial description (e.g., Super Mario where you only see the current screen).
 
 
 * **Action Space:** - **Discrete:** Finite number of actions (Up, Down, Left, Right).
-* **Continuous:** Infinite possibilities (Steering wheel angle from -180° to 180°).
+  - **Continuous:** Infinite possibilities (Steering wheel angle from -180° to 180°).
 
 
 
@@ -48,10 +49,10 @@ The RL process is a loop that happens at each time step :
 
 ## 1.6 Two Main Approaches
 
-To find the **Optimal Policy ()**, we use two main methods:
+To find the **Optimal Policy ($\pi^*$)**, we use two main methods:
 
 1. **Policy-Based Methods:** The agent learns the policy function directly. It maps states to actions (or probabilities of actions).
-2. **Value-Based Methods:** The agent learns a **Value Function** ( or ) that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
+2. **Value-Based Methods:** The agent learns a **Value Function** ($V(s)$ or $Q(s, a)$) that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
 
 ## 1.7 The "Deep" in Deep RL
 
@@ -60,25 +61,25 @@ To find the **Optimal Policy ()**, we use two main methods:
 
 ## 1.8 Summary
 
-* RL is a loop of State  Action  Reward  Next State.
+* RL is a loop of State $\rightarrow$ Action $\rightarrow$ Reward $\rightarrow$ Next State.
 * The objective is to maximize the **Expected Return** (discounted cumulative reward).
-* We use **Discounting ()** because immediate rewards are more certain than distant future rewards.
+* We use **Discounting ($\gamma$)** because immediate rewards are more certain than distant future rewards.
 
 ## 1.9 Glossary
 
 * **Agent:** The AI learner/decision maker.
 * **Environment:** The world the agent lives in.
-* **Policy ():** The "brain" of the agent—the strategy it follows.
+* **Policy ($\pi$):** The "brain" of the agent—the strategy it follows.
 * **Value Function:** Tells us how "good" it is for the agent to be in a certain state.
-* **Gamma ():** The discount rate (usually between 0.95 and 0.99).
+* **Gamma ($\gamma$):** The discount rate (usually between 0.95 and 0.99).
 
 ---
 
 ## ![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white) Introduction to Deep Reinforcement Learning | Deep RL Course
-
+This video covers the foundational concepts of the RL loop, the reward hypothesis, markov property, exploration/exploitation tradeofff, policy, and the difference between policy-based and value-based methods mentioned in my notes.<br><br>
 *Click the image below to watch the Unit 1 Introduction*
 
 [![Watch the video](https://img.youtube.com/vi/q0BiUn5LiBc/0.jpg)](https://www.youtube.com/watch?v=q0BiUn5LiBc)
 
 
-This video covers the foundational concepts of the RL loop, the reward hypothesis, markov property, exploration/exploitation tradeofff, policy, and the difference between policy-based and value-based methods mentioned in my notes.
+
