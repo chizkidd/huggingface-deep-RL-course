@@ -52,7 +52,7 @@ The RL process is a loop that happens at each time step :
 To find the **Optimal Policy ($\pi^*$)**, we use two main methods:
 
 1. **Policy-Based Methods:** The agent learns the policy function directly. It maps states to actions (or probabilities of actions).
-2. **Value-Based Methods:** The agent learns a **Value Function** ($V(s)$ or $Q(s \comma a)$) that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
+2. **Value-Based Methods:** The agent learns a **Value Function** ($V(s)$ or $Q(s,a)$) that maps a state to the expected return. The policy then becomes: "Take the action that leads to the state with the highest value."
 
 ## 1.7 The "Deep" in Deep RL
 
