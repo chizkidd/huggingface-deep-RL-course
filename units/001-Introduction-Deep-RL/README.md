@@ -272,12 +272,12 @@ The principle that the action taken by our agent is **conditional solely on the 
 
 #### **Policy**
 
-* **Policy ():** Often called the "agent's brain." It is a function that tells the agent what action to take, given the current state.
-* **Optimal Policy ():** The specific policy that **maximizes the expected return** when an agent acts according to it. It is learned through _training._
+* **Policy ($\pi$):** Often called the "agent's brain." It is a function that tells the agent what action to take, given the current state.
+* **Optimal Policy ($\pi^*$):** The specific policy that **maximizes the expected return** when an agent acts according to it. It is learned through _training._
 
 #### **Policy-Based Methods**
 
-An approach where the policy is learned directly. It maps each state to the best corresponding action at that state or a probability distribution over the set of possible actions at that state.
+An approach where the policy is **learned directly.** It maps each state to the best corresponding action at that state or a probability distribution over the set of possible actions at that state.
 
 #### **Value-Based Methods**
 
