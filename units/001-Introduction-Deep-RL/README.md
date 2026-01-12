@@ -82,12 +82,14 @@ The **Policy $\pi$** is the brain of our Agent. It is the function that tells us
 * **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that maximizes the expected return when the agent acts according to it. We find this $\pi^*$ through training. There are two main approaches to training our agent to find this optimal policy:
 
 1. **Policy-Based Methods:** Directly teach the agent which action to take given the current state.
-2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states. 
-  > To maximize the expected return, we must find the **Optimal Policy ($\pi^*$)**.
+2. **Value-Based Methods:** Indirectly teach the agent which state is more valuable and then take the action that leads to the most valuable states.
+
+   
+> To maximize the expected return, we must find the **Optimal Policy ($\pi^*$)**.
 
 ### Approach A: Policy-Based Methods
 The agent learns a policy function directly. The policy is the "brain" that maps states to actions (or probabilities of actions).
-- **Deterministic Policy:** Always returns the same action for a specific state ($a = \pi(s)$).
+- **Deterministic Policy:** Always returns the same action for a specific state ($a = \pi(s)$ ).
 - **Stochastic Policy:** Returns a probability distribution over actions ($\pi(a|s) = P[A = a|S = s]$).
 
 ### Approach B: Value-Based Methods
