@@ -178,10 +178,47 @@ You'll see the difference is that:
 | **Feature Engineering** | Hand-crafted features often required. | Neural networks automatically learn features from raw input (like pixels). |
 
 ## 1.8 Summary
-
-* RL is a loop of State $\rightarrow$ Action $\rightarrow$ Reward $\rightarrow$ Next State.
+### Short version
+* RL is a loop of **State $\rightarrow$ Action $\rightarrow$ Reward $\rightarrow$ Next State.**
 * The objective is to maximize the **Expected Return** (discounted cumulative reward).
 * We use **Discounting ($\gamma$)** because immediate rewards are more certain than distant future rewards.
+* We can find the **optimal policy $\pi^*$** by policy-based methods or value-based methods.
+* Deep RL introduces **deep neural networks to estimate the Q-value.**
+
+### Long Version
+#### 1. What is Reinforcement Learning?
+
+Reinforcement Learning (RL) is a **computational approach of learning from actions**. We build an **agent** that learns from the **environment** by interacting with it through trial and error and receiving **rewards** (negative or positive) as feedback.
+
+#### 2. The Goal
+
+The goal of any RL agent is to **maximize its expected cumulative reward** (also called **expected return**). This is based on the **Reward Hypothesis**: the idea that all goals can be described as the maximization of the expected cumulative reward.
+
+#### 3. The RL Process
+
+The RL process is a loop that outputs a sequence of:
+**State  Action  Reward  Next State**
+
+#### 4. Discounting
+
+To calculate the expected return, we **discount the rewards**. Rewards that come sooner are more probable to happen and more predictable than long-term future rewards, so they are weighted more heavily.
+
+#### 5. Policies: The Agent's Brain
+
+To solve an RL problem, we want to find an **optimal policy ()**. The policy is the "brain" of the agent—it tells us what action to take given a state. The optimal policy is the one that results in the maximum expected return.
+
+#### 6. Two Ways to Find the Optimal Policy
+
+* **Policy-Based Methods:** Training the policy directly to learn which action to take in a given state.
+* **Value-Based Methods:** Training a **value function** to learn which state is more valuable and using that information to define a policy (usually "go to the state with the highest value").
+
+#### 7. Why "Deep" RL?
+
+We speak about **Deep Reinforcement Learning** because we introduce **deep neural networks** to:
+
+* Estimate the action to take (Policy-based).
+* Estimate the value of a state (Value-based).
+
 
 ## 1.9 Glossary
 
