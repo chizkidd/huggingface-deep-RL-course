@@ -77,7 +77,12 @@ Now that we have learned the RL framework, how do we solve the RL problem? In ot
 
 ### The Policy : The Agent's Brain
 
-The **Policy $\pi$** is the brain of our Agent. It is the function that tells us what action to take given the state we are in. It defines the agent's behavior at a given time.
+The **Policy $\pi$** is the brain of our Agent. It is the function that tells us what action to take given the state we are in. It defines ***the agent's behavior*** at a given time.
+```mermaid
+graph LR
+    S(State) --> P["Policy π(s)"]
+    P --> A(Action)
+```
 
 * **Goal:** The function we want to learn is the **optimal policy $\pi^*$**, which is the policy that maximizes the expected return when the agent acts according to it. We find this $\pi^*$ through training. There are two main approaches to training our agent to find this optimal policy:
 
