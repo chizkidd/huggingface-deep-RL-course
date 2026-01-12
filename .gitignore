@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Environments/Models
+models/
+logs/
+*.zip
+*.pth
+*.onnx
+
+# Course Specific
+results/
+training-envs-executables/
