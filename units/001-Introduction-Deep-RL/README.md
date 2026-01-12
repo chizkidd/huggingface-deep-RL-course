@@ -13,6 +13,7 @@ Deep Reinforcement Learning (Deep RL) is a subfield of machine learning where an
 
 * **The Analogy:** Like a child learning to play a video game. They press buttons (actions), see the score increase (reward) or lose a life (punishment), and adjust their behavior accordingly.
 * **Reward Hypothesis:** All goals can be described as the ***maximization of the expected return (expected cumulative reward).***
+> That’s why in Reinforcement Learning, ***to have the best behavior,*** we aim to learn to take actions that _maximize the expected cumulative reward._
 
 ## 1.3 The RL Framework
 
