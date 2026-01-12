@@ -3,7 +3,6 @@
 This repository documents my journey through the [Hugging Face Deep Reinforcement Learning Course](https://huggingface.co/learn/deep-rl-course/). It contains my progress, notes, implementations, notebooks, environment setups, and the agents I've trained to master various tasks.
 
 --- 
-
 ## Goals
 - Understand the theoretical foundations of Reinforcement Learning.
 - Learn to use libraries like **Stable Baselines3**, **Gymnasium**, and **RL Baselines3 Zoo**.
@@ -11,7 +10,6 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 - Share my models on the Hugging Face Hub.
 
 ---
-
 ## Progress Tracker
 
 | Unit | Topic | Status | Model Hub Link |
@@ -27,7 +25,12 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **8** | Proximal Policy Optimization (PPO) | ⬜ | [Link] |
 
 ---
+## Resources
 
+* [Hugging Face Deep RL Course](https://huggingface.co/learn/deep-rl-course/unit0/introduction) — The main course curriculum.
+* [Reinforcement Learning: An Introduction (Sutton & Barto)](http://incompleteideas.net/book/RLbook2020.pdf) — The "Bible" of RL; essential for deep theoretical understanding.
+
+---
 ## Local Setup
 
 1. **Clone the repo:**
