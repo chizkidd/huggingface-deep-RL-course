@@ -62,46 +62,6 @@ Because Huggy has a complex continuous action space, we use **PPO (Proximal Poli
 * **Time Horizon:** How many steps the agent looks forward to calculate rewards.
 
 ### The Training Loop
-```mermaid
-graph RL
-    %% Define Nodes
-    Agent["<b>Agent</b><br/>(Huggy)"]
-    Env["<b>Environment</b>"]
-    
-    %% Define Side Boxes (Subgraphs or nodes with specific text)
-    StateBox["<b>State Sₜ</b><br/>Stick position<br/>Relative position between<br/>Huggy and the target<br/>Huggy legs' orientation"]
-    ActionBox["<b>Action Aₜ</b><br/>(Joint movements)"]
-
-    %% Connections
-    Env -- "reward Rₜ" --> Agent
-    StateBox --> Agent
-    Agent --> ActionBox
-    ActionBox --> Env
-    Env -.-> StateBox
-
-    %% Styling
-    style Agent fill:#fff,stroke:#ddd,stroke-width:2px
-    style Env fill:#fff,stroke:#ddd,stroke-width:2px
-    style StateBox fill:#333,color:#fff,stroke:#333,stroke-width:2px
-    style ActionBox fill:#fff,stroke:#ddd,stroke-width:2px
-```
-
-```mermaid
-graph TD
-    %% Nodes
-    Agent["<b>Agent</b>"]
-    Env["<b>Environment</b>"]
-
-    %% Right Side: Action flow
-    Agent -- "Action Aₜ" --> Env
-
-    %% Left Side: State and Reward flow
-    Env -- "State Sₜ, Reward Rₜ" --> Agent
-
-    %% Layout Tweaks
-    style Agent fill:#fff,stroke:#333,stroke-width:2px
-    style Env fill:#fff,stroke:#333,stroke-width:2px
-```
 
 ```mermaid
 graph TD
@@ -110,52 +70,15 @@ graph TD
     Env["<b>Environment</b>"]
 
     %% Horizontal flow
-    Agent -- "<b>Action Aₜ</b><br/>(Joint movements)" --> Env
     Env -- "<b>Sₜ:</b> Stick & Leg position<br/><b>Rₜ:</b> Reward" --> Agent
+    Agent -- "<b>Action Aₜ</b><br/>(Joint movements)" --> Env
 
     %% Styling for clarity
     style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
-```mermaid
-flowchart LR
-    %% Nodes
-    Agent["🐶<br/><b>Agent</b>"]
-    
-    State["<b>State Sₜ</b><br/>
-    Stick position<br/>
-    Relative position between Huggy and the target<br/>
-    Huggy legs' orientation"]
-
-    Action["<b>Action Aₜ</b><br/>
-    (Leg joint controls)"]
-
-    Reward["<b>Reward Rₜ</b>"]
-
-    Environment["🌳<br/><b>Environment</b><br/>(Huggy simulation)"]
-
-    %% Flow
-    State --> Agent
-    Agent --> Action
-    Action --> Environment
-    Environment --> Reward
-    Reward --> Agent
-    Environment --> State
-
-    %% Styling
-    classDef agent fill:#f2f2f2,stroke:#bdbdbd,stroke-width:2px,rx:20,ry:20
-    classDef env fill:#f2f2f2,stroke:#bdbdbd,stroke-width:2px,rx:20,ry:20
-    classDef action fill:#f7f7f7,stroke:#cfcfcf,stroke-width:2px,rx:15,ry:15
-    classDef reward fill:#ffffff,stroke:#cfcfcf,stroke-width:2px,rx:15,ry:15
-    classDef state fill:#2b2b2b,color:#ffffff,stroke:#1f1f1f,stroke-width:2px,rx:15,ry:15
-
-    class Agent agent
-    class Environment env
-    class Action action
-    class Reward reward
-    class State state
-```
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/RL_process_game.jpg" alt="The RL process" width="100%">
 
 ## 4 Play and Share
 
