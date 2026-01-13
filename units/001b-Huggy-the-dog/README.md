@@ -111,7 +111,10 @@ graph TD
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
-![RL loop]('../../img/huggy_train_loop.svg')
+![Huggy-train-loop]("../../img/huggy_train_loop.svg")
+
+<img src="../../img/huggy_train_loop.svg" alt="Huggy Train loop" width="600"/>
+
 
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/notebooks/unit-bonus1/huggy-loop.jpg" width="100%">
