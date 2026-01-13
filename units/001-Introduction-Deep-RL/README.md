@@ -1,13 +1,13 @@
 # Unit 1: Introduction to Deep Reinforcement Learning - Results
-## 🚀 Results
+## Results
 My agent successfully learned to land on the moon! 
 
 **Model Hub Link:** [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3)
 
-### 🚀 LunarLander-v3 Result
+### LunarLander-v3 Result
 My agent is now live on the Hugging Face Hub!
 
-[![View Model on HF](https://img.shields.io/badge/Hugging%20Face-Model%20Card-orange?style=for-the-badge&logo=huggingface)](https://huggingface.co/Chiz/ppo-LunarLander-v3)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Card-orange)](https://huggingface.co/Chiz/ppo-LunarLander-v3)
 
 ### How to run this model:
 ```python
