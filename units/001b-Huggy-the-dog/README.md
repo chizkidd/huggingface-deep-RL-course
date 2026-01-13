@@ -48,9 +48,7 @@ The goal is that Huggy moves towards the stick without spinning too much.
 
 ## 3 Training Huggy
 
-Huggy aims to ***learn to run correctly and as fast as possible toward the goal.*** To do that, at every step and given the environment observation, 
-he needs to decide how to rotate each joint motor of his legs to move correctly (not spinning too much) and towards the goal. 
-Because Huggy has a complex continuous action space, we use **PPO (Proximal Policy Optimization)**.
+Huggy aims to ***learn to run correctly and as fast as possible toward the goal.*** To do that, at every step and given the environment observation, he needs to decide how to rotate each joint motor of his legs to move correctly (not spinning too much) and towards the goal. Because Huggy has a complex continuous action space, we use **PPO (Proximal Policy Optimization)**.
 
 ### The Training Process:
 
@@ -63,33 +61,30 @@ Because Huggy has a complex continuous action space, we use **PPO (Proximal Poli
 
 ### The Training Loop
 
-<img src="../../img/huggy_train_loop.svg" alt="Huggy Train loop" width="600"/>
+<img src="../../img/huggy_train_loop_simplified.svg" alt="Huggy Train loop" width="600"/>
 
-<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/notebooks/unit-bonus1/huggy-loop.jpg" width="100%">
 
 ## 4 Play and Share
 
-Once training is finished, the model is exported as a `.nn` or `.onnx` file.
+In this section, we will be able to play with your trained Huggy model directly in your browser. This allows us to see the results of our training and how well our agent has learned to fetch the stick.
 
-* **The Play Loop:** The model is loaded into the Unity executable, and Huggy now "knows" how to run toward the stick based on the weights learned during training.
-* **The Hub:** You can upload your Huggy model to the Hugging Face Hub just like you did with LunarLander.
+### How to Play with Huggy
+
+1. **Select your model:** Choose your model repository, which is your Hugging Face model ID (e.g., `ThomasSimonini/ppo-Huggy`).
+2. **Choose a checkpoint:** Select which specific model version you want to replay.
+* Since models are saved periodically (e.g., every 500,000 timesteps), you can choose the most recent one (often ending in `.onnx`).
+* It is often useful to try different checkpoints to observe how the agent's performance improved over the course of training.
+3. **Start the demo:** Click on **"Play with my Huggy model"** to launch the interactive environment.
+
+### Understanding the Results
+
+While playing with Huggy, keep in mind the foundations you learned in Unit 1:
+
+* **The Goal:** Huggy's objective is to reach the stick as quickly as possible without excessive spinning.
+* **The Input (State):** Huggy doesn't see "pixels" like a human; instead, the model receives vector information including the target position, its relative position to the stick, and its own leg orientation.
+* **The Feedback (Reward):** The behavior you see is the result of the reward function you used, which prioritized getting close to the target while penalizing time taken and unnecessary rotation.
 
 ---
-
-### Recommended Repository Update
-
-I suggest adding a "Practices" section to your `units/` folder to keep things clean.
-
-```text
-huggingface-deep-rl-study/
-├── units/
-│   ├── unit1-intro-rl/
-│   ├── unit2-q-learning/
-│   └── unit-bonus1-huggy/  <-- Add this!
-│       ├── 01-intro-to-DeepRL-with-huggy.md
-│       └── huggy_ppo_config.yaml  <- For your hyperparameters
-
-```
 
 ### Quick Tip for Huggy
 
