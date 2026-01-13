@@ -118,6 +118,45 @@ graph TD
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
+```mermaid
+flowchart LR
+    %% Nodes
+    Agent["🐶<br/><b>Agent</b>"]
+    
+    State["<b>State Sₜ</b><br/>
+    Stick position<br/>
+    Relative position between Huggy and the target<br/>
+    Huggy legs' orientation"]
+
+    Action["<b>Action Aₜ</b><br/>
+    (Leg joint controls)"]
+
+    Reward["<b>Reward Rₜ</b>"]
+
+    Environment["🌳<br/><b>Environment</b><br/>(Huggy simulation)"]
+
+    %% Flow
+    State --> Agent
+    Agent --> Action
+    Action --> Environment
+    Environment --> Reward
+    Reward --> Agent
+    Environment --> State
+
+    %% Styling
+    classDef agent fill:#f2f2f2,stroke:#bdbdbd,stroke-width:2px,rx:20,ry:20
+    classDef env fill:#f2f2f2,stroke:#bdbdbd,stroke-width:2px,rx:20,ry:20
+    classDef action fill:#f7f7f7,stroke:#cfcfcf,stroke-width:2px,rx:15,ry:15
+    classDef reward fill:#ffffff,stroke:#cfcfcf,stroke-width:2px,rx:15,ry:15
+    classDef state fill:#2b2b2b,color:#ffffff,stroke:#1f1f1f,stroke-width:2px,rx:15,ry:15
+
+    class Agent agent
+    class Environment env
+    class Action action
+    class Reward reward
+    class State state
+```
+
 ## 4 Play and Share
 
 Once training is finished, the model is exported as a `.nn` or `.onnx` file.
