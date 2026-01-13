@@ -78,6 +78,22 @@ graph TD
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
+```mermaid
+graph TD
+    Agent["<b>Agent (Huggy)</b>"]
+    Env["<b>Environment</b>"]
+
+    %% Right side flow (Action)
+    Agent ---->|<b>Action Aₜ</b><br/>Joint movements| Env
+
+    %% Left side flow (State/Reward)
+    Env ---->|<b>Sₜ:</b> Stick & Leg position<br/><b>Rₜ:</b> Reward| Agent
+
+    %% Styling
+    style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
+```
+
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/RL_process_game.jpg" alt="The RL process" width="100%">
 
 ## 4 Play and Share
