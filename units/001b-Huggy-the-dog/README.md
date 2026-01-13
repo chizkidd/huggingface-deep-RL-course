@@ -96,31 +96,19 @@ graph TD
 
 ```mermaid
 graph TD
+    %% Nodes
     Agent["<b>Agent (Huggy)</b>"]
-
-    StateReward["<b>State Sₜ</b><br/>
-    Stick position<br/>
-    Leg orientation<br/><br/>
-    <b>Reward Rₜ</b>"]
-
-    Action["<b>Action Aₜ</b><br/>
-    Joint movements"]
-
     Env["<b>Environment</b>"]
 
-    %% Layout control
-    Agent --> Action
-    Agent --> StateReward
+    %% Right side: Agent to Environment (Downward)
+    Agent -- "<b>Action Aₜ</b>" --> Env
 
-    Action --> Env
-    StateReward --> Agent
-    Env --> StateReward
+    %% Left side: Environment to Agent (Upward)
+    Env -- "<b>Sₜ, Rₜ</b>" --> Agent
 
     %% Styling
     style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style Action fill:#f0f0f0,stroke:#666
-    style StateReward fill:#2b2b2b,color:#ffffff,stroke:#111
 ```
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/RL_process_game.jpg" alt="The RL process" width="100%">
