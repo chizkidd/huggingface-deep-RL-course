@@ -4,6 +4,11 @@ My agent successfully learned to land on the moon!
 
 **Model Hub Link:** [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3)
 
+### 🚀 LunarLander-v3 Result
+My agent is now live on the Hugging Face Hub!
+
+[![View Model on HF](https://img.shields.io/badge/Hugging%20Face-Model%20Card-orange?style=for-the-badge&logo=huggingface)](https://huggingface.co/Chiz/ppo-LunarLander-v3)
+
 ### How to run this model:
 ```python
 from huggingface_sb3 import load_from_hub
