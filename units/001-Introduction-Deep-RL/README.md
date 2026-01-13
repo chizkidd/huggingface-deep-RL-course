@@ -8,7 +8,7 @@ My agent successfully learned to land on the moon!
 My agent is now live on the Hugging Face Hub! Shown below is a video preview of my agent
 
 <div align="center">
-  <video src="https://github.com/chizkidd/huggingface-deep-RL-course/raw/main/vids/ppo-LunarLander-v3.mp4" controls="controls" style="max-width: 100%;">
+  <video src="https://github.com/user-attachments/assets/e9d3b2e5-7097-4ccc-abf1-b3e3cb363ddc" controls="controls" style="max-width: 100%;">
   </video>
 </div>
 
