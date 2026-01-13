@@ -33,9 +33,35 @@ notebook_login()
 ```
 
 
-
 ## Learning Path & Certification
 
 * **Goal:** Complete 80% of the course assignments.
 * **Method:** Practical notebooks in Google Colab + Local development for theory.
 * **Status:** Hugging Face account created and Discord joined for community support.
+
+Here is the updated section for your **Unit 0 README**. I have integrated the `setup_check.py` details so that it acts as a clear verification step for your environment.
+
+
+## Workspace Verification
+
+To ensure that the foundation is solid before moving into complex algorithms, I use a custom verification script. This script checks library versions, validates **Box2D** installation (required for LunarLander), and confirms Hugging Face authentication status.
+
+### Setup Check Script
+
+The script `setup_check.py` is located in this directory. It provides a quick way to diagnose environment issues.
+
+**Run the verification:**
+
+```bash
+python units/000-Introduction-Setup/setup_check.py
+
+```
+
+### What it validates:
+
+* **Versions:** Displays current versions of `gymnasium`, `stable-baselines3`, and `huggingface_hub`.
+* **Box2D Check:** Attempts to initialize `LunarLander-v3` to ensure physics engines are properly compiled.
+* **HF Auth:** Checks if a valid Hugging Face token is detected in the local cache.
+
+---
+
