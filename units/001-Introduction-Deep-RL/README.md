@@ -1,5 +1,16 @@
-# Unit 1: Introduction to Deep Reinforcement Learning
+# Unit 1: Introduction to Deep Reinforcement Learning - Results
+## 🚀 Results
+My agent successfully learned to land on the moon! 
 
+**Model Hub Link:** [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3)
+
+### How to run this model:
+```python
+from huggingface_sb3 import load_from_hub
+checkpoint = load_from_hub("Chiz/ppo-LunarLander-v3", "ppo-LunarLander-v3.zip")
+```
+
+# Unit 1: Introduction to Deep Reinforcement Learning - Learning Notes
 ## 1.1 Introduction
 
 Deep Reinforcement Learning (Deep RL) is a subfield of machine learning where an **agent** learns to make decisions by performing **actions** in an **environment** to maximize a **reward**.
