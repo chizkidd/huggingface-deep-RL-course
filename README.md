@@ -15,7 +15,7 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | Unit | Topic | Status | Model Hub Link |
 | :--- | :--- | :---: | :--- |
 | **0** | Introduction & Setup | ✅ | - |
-| **1** | Intro to Deep RL (LunarLander-v2) | 🏗️ | [Link] |
+| **1** | Intro to Deep RL (LunarLander-v3) | ✅ | [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3) |
 | **2** | Q-Learning (FrozenLake-v1) | ⬜ | [Link] |
 | **3** | Deep Q-Learning (Space Invaders) | ⬜ | [Link] |
 | **4** | Policy Gradients (CartPole-v1) | ⬜ | [Link] |
