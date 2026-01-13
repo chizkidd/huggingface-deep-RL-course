@@ -1,4 +1,4 @@
-Bonus Unit 1: Intro to Deep RL with Huggy 
+# Bonus Unit 1: Intro to Deep RL with Huggy 
 
 In this bonus unit, we work with **Huggy the Dog**, an environment created in **Unity.** Unlike the simple grids of FrozenLake, this is a 3D environment where we train a dog to fetch a stick using **Deep Reinforcement Learning**.
 
@@ -111,7 +111,10 @@ graph TD
     style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
-<img src="[https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/RL_process_game.jpg](https://cas-bridge.xethub.hf.co/xet-bridge-us/637f72fc62a4445929f4fcb3/168f10f0fb30b8515e33cbcbb8bb5417534257e7f0731b3d72eabd584f282b60?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260113T203012Z&X-Amz-Expires=3600&X-Amz-Signature=facae8a8220531fb3f3c09859ecd4d6ff5b6a1082c78c1ac24e7183349786f4e&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=638faa7f21d355ca70d54e38&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27huggy-loop.jpg%3B+filename%3D%22huggy-loop.jpg%22%3B&response-content-type=image%2Fjpeg&x-id=GetObject&Expires=1768339812&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2ODMzOTgxMn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzdmNzJmYzYyYTQ0NDU5MjlmNGZjYjMvMTY4ZjEwZjBmYjMwYjg1MTVlMzNjYmNiYjhiYjU0MTc1MzQyNTdlN2YwNzMxYjNkNzJlYWJkNTg0ZjI4MmI2MCoifV19&Signature=sgThU1ig6mFzsGqkksAdb6zBP3nAu4sHolcCII1asyScb3emJX-jpz6H%7EiehH-p3eHET5-tdhtNw-9GbwC1WnogSj29xVD53XjHPhKFn%7EFVuKfQS9nK4Ug6-wxqH7kGWChDW0CWrswaMnBBqAYL9vC4lrU7ADkiDpCWVA-r756rwOuCrvj54Cx5irSBmSB1prfegWlz1SCimUHH%7ENZqhJ9Bn9nBGB%7EgOnYEWaGTmB6NI%7EWRH%7E%7EOmCRYWkSszTUtijLYdPJmk6hnQWMKu1RSVvzE1QbevpJ1SfzQ-bDnjotEZ6nc-CvqvUkg%7E%7E98%7ERUhiOidLoWbkjSwOiWpsJwj9cQ__&Key-Pair-Id=K2L8F4GPSG1IFC)" alt="The RL process" width="100%">
+![RL loop]('../img/huggy_train_loop.svg')
+
+
+<img src="[https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/RL_process_game.jpg](https://cas-bridge.xethub.hf.co/xet-bridge-us/637f72fc62a4445929f4fcb3/168f10f0fb30b8515e33cbcbb8bb5417534257e7f0731b3d72eabd584f282b60?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260113T203012Z&X-Amz-Expires=3600&X-Amz-Signature=facae8a8220531fb3f3c09859ecd4d6ff5b6a1082c78c1ac24e7183349786f4e&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=638faa7f21d355ca70d54e38&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27huggy-loop.jpg%3B+filename%3D%22huggy-loop.jpg%22%3B&response-content-type=image%2Fjpeg&x-id=GetObject&Expires=1768339812&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2ODMzOTgxMn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzdmNzJmYzYyYTQ0NDU5MjlmNGZjYjMvMTY4ZjEwZjBmYjMwYjg1MTVlMzNjYmNiYjhiYjU0MTc1MzQyNTdlN2YwNzMxYjNkNzJlYWJkNTg0ZjI4MmI2MCoifV19&Signature=sgThU1ig6mFzsGqkksAdb6zBP3nAu4sHolcCII1asyScb3emJX-jpz6H%7EiehH-p3eHET5-tdhtNw-9GbwC1WnogSj29xVD53XjHPhKFn%7EFVuKfQS9nK4Ug6-wxqH7kGWChDW0CWrswaMnBBqAYL9vC4lrU7ADkiDpCWVA-r756rwOuCrvj54Cx5irSBmSB1prfegWlz1SCimUHH%7ENZqhJ9Bn9nBGB%7EgOnYEWaGTmB6NI%7EWRH%7E%7EOmCRYWkSszTUtijLYdPJmk6hnQWMKu1RSVvzE1QbevpJ1SfzQ-bDnjotEZ6nc-CvqvUkg%7E%7E98%7ERUhiOidLoWbkjSwOiWpsJwj9cQ__&Key-Pair-Id=K2L8F4GPSG1IFC]" alt="The RL process" width="100%">
 
 ## 4 Play and Share
 
