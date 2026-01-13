@@ -86,7 +86,37 @@ graph RL
     style ActionBox fill:#fff,stroke:#ddd,stroke-width:2px
 ```
 
+```mermaid
+graph TD
+    %% Nodes
+    Agent["<b>Agent</b>"]
+    Env["<b>Environment</b>"]
 
+    %% Right Side: Action flow
+    Agent -- "Action Aₜ" --> Env
+
+    %% Left Side: State and Reward flow
+    Env -- "State Sₜ, Reward Rₜ" --> Agent
+
+    %% Layout Tweaks
+    style Agent fill:#fff,stroke:#333,stroke-width:2px
+    style Env fill:#fff,stroke:#333,stroke-width:2px
+```
+
+```mermaid
+graph TD
+    %% Nodes
+    Agent["<b>Agent (Huggy)</b>"]
+    Env["<b>Environment</b>"]
+
+    %% Horizontal flow
+    Agent -- "<b>Action Aₜ</b><br/>(Joint movements)" --> Env
+    Env -- "<b>Sₜ:</b> Stick & Leg position<br/><b>Rₜ:</b> Reward" --> Agent
+
+    %% Styling for clarity
+    style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
+```
 
 ## 4 Play and Share
 
