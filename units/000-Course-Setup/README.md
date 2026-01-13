@@ -39,8 +39,6 @@ notebook_login()
 * **Method:** Practical notebooks in Google Colab + Local development for theory.
 * **Status:** Hugging Face account created and Discord joined for community support.
 
-Here is the updated section for your **Unit 0 README**. I have integrated the `setup_check.py` details so that it acts as a clear verification step for your environment.
-
 
 ## Workspace Verification
 
