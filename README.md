@@ -23,7 +23,24 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **6** | Actor-Critic Methods | ⬜ | [Link] |
 | **7** | Multi-Agent RL | ⬜ | [Link] |
 | **8** | Proximal Policy Optimization (PPO) | ⬜ | [Link] |
+## 📈 Progress Tracker
 
+| Unit | Topic | Status | Model Hub Link |
+| :--- | :--- | :---: | :--- |
+| **0** | Introduction & Setup | ✅ | - |
+| **1** | Intro to Deep RL (LunarLander-v3) | ✅ | [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3) |
+| **1b** | **Bonus:** Huggy the Dog & Live 1 | ⬜ | [Link] |
+| **2** | Q-Learning (FrozenLake-v1 & Taxi-v3) | 🏗️ | [Link] |
+| **3** | Deep Q-Learning (Atari Space Invaders) | ⬜ | [Link] |
+| **3b** | **Bonus:** Optuna Hyperparameter Tuning | ⬜ | [Link] |
+| **4** | Policy Gradients (CartPole-v1) | ⬜ | [Link] |
+| **5** | Unity ML-Agents | ⬜ | [Link] |
+| **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] |
+| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] |
+| **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] |
+| **8b** | PPO Part 2: Doom | ⬜ | [Link] |
+| **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] |
+| **10** | **Bonus:** Imitation Learning with Godot RL Agents | ⬜ | [Link] |
 ---
 ## Resources
 
