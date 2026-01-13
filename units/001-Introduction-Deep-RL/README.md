@@ -5,9 +5,24 @@ My agent successfully learned to land on the moon!
 **Model Hub Link:** [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3)
 
 ### LunarLander-v3 Result
-My agent is now live on the Hugging Face Hub!
+My agent is now live on the Hugging Face Hub! Shown below is a video preview of my agent
 
-[![Hugging Face](https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png)](https://huggingface.co/Chiz/ppo-LunarLander-v3)
+<div align="center">
+  <video src="https://huggingface.co/Chiz/ppo-LunarLander-v3/resolve/main/replay.mp4" controls="controls" style="max-width: 100%;">
+  </video>
+</div>
+
+### Evaluation Results
+
+After training for 1,500,000 timesteps, the agent was evaluated over 10 episodes in a deterministic mode.
+
+<div align="center">
+
+| Metric | Value | Description |
+| :--- | :--- | :--- |
+| **Mean Reward** | **276.85** +/- 14.59 | High score indicating precise landing. |
+| **Environment** | `LunarLander-v3` | Validated on the updated Gymnasium environment. |
+| **Status** | Solved | Exceeds the passing threshold of 200 (**>=200**).  |
 
 ### How to run this model:
 ```python
