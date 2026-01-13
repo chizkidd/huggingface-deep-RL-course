@@ -8,11 +8,10 @@ My agent successfully learned to land on the moon!
 My agent is now live on the Hugging Face Hub! Shown below is a video preview of my agent
 
 <div align="center">
-  <video src="https://huggingface.co/Chiz/ppo-LunarLander-v3/resolve/main/replay.mp4" controls="controls" style="max-width: 100%;">
+  <video src="https://github.com/user-attachments/assets/17ef44fd-138a-4afb-948c-442abaf5d7fc" controls="controls" style="max-width: 100%;">
   </video>
 </div>
 
-[![Watch the Lunar Lander Replay](https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png)](https://huggingface.co/Chiz/ppo-LunarLander-v3/resolve/main/replay.mp4)
 
 ### Evaluation Results
 
