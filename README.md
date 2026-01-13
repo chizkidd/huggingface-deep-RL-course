@@ -16,19 +16,6 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | :--- | :--- | :---: | :--- |
 | **0** | Introduction & Setup | ✅ | - |
 | **1** | Intro to Deep RL (LunarLander-v3) | ✅ | [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3) |
-| **2** | Q-Learning (FrozenLake-v1) | ⬜ | [Link] |
-| **3** | Deep Q-Learning (Space Invaders) | ⬜ | [Link] |
-| **4** | Policy Gradients (CartPole-v1) | ⬜ | [Link] |
-| **5** | Unity ML-Agents | ⬜ | [Link] |
-| **6** | Actor-Critic Methods | ⬜ | [Link] |
-| **7** | Multi-Agent RL | ⬜ | [Link] |
-| **8** | Proximal Policy Optimization (PPO) | ⬜ | [Link] |
-## 📈 Progress Tracker
-
-| Unit | Topic | Status | Model Hub Link |
-| :--- | :--- | :---: | :--- |
-| **0** | Introduction & Setup | ✅ | - |
-| **1** | Intro to Deep RL (LunarLander-v3) | ✅ | [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3) |
 | **1b** | **Bonus:** Huggy the Dog & Live 1 | ⬜ | [Link] |
 | **2** | Q-Learning (FrozenLake-v1 & Taxi-v3) | 🏗️ | [Link] |
 | **3** | Deep Q-Learning (Atari Space Invaders) | ⬜ | [Link] |
