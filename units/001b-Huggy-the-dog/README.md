@@ -63,59 +63,7 @@ Because Huggy has a complex continuous action space, we use **PPO (Proximal Poli
 
 ### The Training Loop
 
-```mermaid
-graph TD
-    %% Nodes
-    Agent["<b>Agent (Huggy)</b>"]
-    Env["<b>Environment</b>"]
-
-    %% Horizontal flow
-    Env -- "<b>Sₜ:</b> Stick & Leg position<br/><b>Rₜ:</b> Reward" --> Agent
-    Agent -- "<b>Action Aₜ</b><br/>(Joint movements)" --> Env
-
-    %% Styling for clarity
-    style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
-```
-
-```mermaid
-graph TD
-    Agent["<b>Agent (Huggy)</b>"]
-    Env["<b>Environment</b>"]
-
-    %% Right side flow (Action)
-    Agent ---->|<b>Action Aₜ</b><br/>Joint movements| Env
-
-    %% Left side flow (State/Reward)
-    Env ---->|<b>Sₜ:</b> Stick & Leg position<br/><b>Rₜ:</b> Reward| Agent
-
-    %% Styling
-    style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
-```
-
-```mermaid
-graph TD
-    %% Nodes
-    Agent["<b>Agent (Huggy)</b>"]
-    Env["<b>Environment</b>"]
-
-    %% Right side: Agent to Environment (Downward)
-    Agent -- "<b>Action Aₜ</b>" --> Env
-
-    %% Left side: Environment to Agent (Upward)
-    Env -- "<b>Sₜ, Rₜ</b>" --> Agent
-
-    %% Styling
-    style Agent fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style Env fill:#f9f9f9,stroke:#333,stroke-width:2px
-```
-
-![Huggy-train-loop]("../../img/huggy_train_loop.svg")
-
 <img src="../../img/huggy_train_loop.svg" alt="Huggy Train loop" width="600"/>
-
-
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/notebooks/unit-bonus1/huggy-loop.jpg" width="100%">
 
