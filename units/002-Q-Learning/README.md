@@ -70,13 +70,20 @@ The discount factor $\gamma$ adjusts how much future rewards affect current valu
 ## 2.5 Monte Carlo (MC) vs. Temporal Difference (TD)
 
 These are the two ways or learning strategies we use to update our value functions: 
-### Monte Carlo (MC)
+
+### Monte Carlo (MC) 
+
+$$V(S_t) \leftarrow V(S_t) + \alpha [G_t - V(S_t)]$$
+
 - Updates values **only after an entire episode** completes.
 - Uses actual episode returns as targets.  
 - ***Advantage:*** accurate targets.  
 - ***Limitation:*** must wait until end of episode.
 
 ### Temporal Difference (TD) Learning
+
+$$V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]$$
+
 - Updates value estimates **after each step**.
 - Uses **bootstrapping**: uses estimated value of next state instead of full return.
 - More incremental and efficient than MC.
