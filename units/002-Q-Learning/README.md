@@ -30,12 +30,12 @@ Two broad classes of RL methods:
 In value-based approaches, a policy is derived by selecting actions that maximize value (for example, greedy or $\epsilon$-greedy)
 
 1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a given policy thereafter. It describes how good it is to be in a given state when following policy $\pi$.
-$$V_{\pi}(s) = E_{\pi} [G_t | S_t = s] = \mathbb{E}[G_t \mid S_t = s, \pi]$$
+   - $$V_{\pi}(s) = E_{\pi} [G_t | S_t = s] = \mathbb{E}[G_t \mid S_t = s, \pi]$$
 
 
 
-2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states. This is what we use in $Q$-Learning.
-$$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s, A_t = a, \pi]$$
+3. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states. This is what we use in $Q$-Learning.
+   - $$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s, A_t = a, \pi]$$
 
 
 
@@ -46,7 +46,9 @@ The Bellman Equation is the mathematical foundation of RL. It provides a recursi
 - **Immediate reward** + **discounted value of successor state**.
 
 For a state value: 
+
 $$V(s) \leftarrow R + \gamma V(s')$$
+
 $$V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$$
   
 This recursion simplifies iterative computation and underpins dynamic programming and many RL algorithms.
