@@ -28,6 +28,8 @@ Two broad classes of RL methods:
       - **The Goal:** Find the optimal value function $V^\*(s)$ or $Q^\*(s, a)$.
       - **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
 
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/0*atP0PeSrelqAd8Cp)
+
 ## 2.3 Two Types of Value-Based Methods
 In value-based approaches, a policy is derived by selecting actions that maximize value (for example, greedy or $\epsilon$-greedy)
 
