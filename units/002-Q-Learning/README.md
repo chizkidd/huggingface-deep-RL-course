@@ -19,6 +19,8 @@ Key learning outcomes:
 
 Reinforcement Learning (RL) focuses on training an **agent** to make decisions through interaction with an **environment**. The agent learns by receiving **rewards** for its actions and aims to **maximize cumulative reward** over time. The policy, denoted $\epsilon$, defines the agent’s decision strategy. The optimal policy $\pi^\*$ leads to the best possible long-term returns. 
 
+ ![](https://sijunhe.github.io/assets/images/posts/rlhf/basic_rl.jpeg)
+
 Two broad classes of RL methods:
 - **Policy-based methods**: Directly learn a policy that maps states to actions.
 - **Value-based methods**: Learn a value function that approximates future expected return, and derive a policy from that value function.
