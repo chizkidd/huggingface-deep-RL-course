@@ -4,7 +4,7 @@ This unit explores the foundations of value-based reinforcement learning. While 
 
 ## 2.1 Introduction
 
-In this unit, we move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **$Q$-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
+>In this unit, we move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **$Q$-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
 
 This unit dives deeper into **value-based RL methods** and introduces **$Q$-Learning**, one of the foundational RL algorithms. It explains theoretical concepts and then applies them to simple environments such as `FrozenLake-v1` and an autonomous taxi. This unit also sets up the conceptual foundation for later units on Deep $Q$-Learning and `Atari` game agents. 
 
