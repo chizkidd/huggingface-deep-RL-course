@@ -48,7 +48,7 @@ $$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s
 ## 2.4 The Bellman Equation
 
 The Bellman Equation is the mathematical foundation of RL. It provides a recursive decomposition of value functions & simplifies the calculation of the value function by breaking the expected return into two parts: the immediate reward plus the discounted value of the next state. Rather than summing all future rewards to compute value, the Bellman equation expresses value as:
-- **Immediate reward** + **discounted value of successor state**.
+- **Immediate reward $R_{t+1}$** + **discounted value of successor state $\gamma V(s_{t+1})$**.
 
 For a state value: 
 
@@ -62,7 +62,7 @@ Where:
 
 * $R$: Immediate reward.
 * $\gamma$: Discount factor (importance of future rewards).
-* $V(s')$: Value of the next state.
+* $V(s')$ or $V(s_{t+1})$: Value of the next state.
 
 The discount factor $\gamma$ adjusts how much future rewards affect current value. Values close to 1 place more emphasis on long-term reward.
 
