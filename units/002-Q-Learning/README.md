@@ -4,14 +4,27 @@ This unit explores the foundations of value-based reinforcement learning. While 
 
 ## 2.1 Introduction
 
-In this unit, you move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **Q-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
+In this unit, we move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **Q-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
 
-## 2.2 What is Value-Based RL?
+This unit dives deeper into **value-based RL methods** and introduces **Q-Learning**, one of the foundational RL algorithms. It explains theoretical concepts and then applies them to simple environments such as `FrozenLake-v1` and an autonomous taxi. This unit also sets up the conceptual foundation for later units on Deep Q-Learning and `Atari` game agents. 
 
-In Value-Based Reinforcement Learning, the agent learns a **Value Function** that maps a state (or state-action pair) to a value.
+Key learning outcomes:
+- Create a **Q-Table.**
+- Value-based methods and how they differ from policy-based approaches.
+- Contrast between Monte Carlo and Temporal Difference learning.
+- Understanding and implementing the Q-Learning algorithm from scratch. 
 
-* **The Goal:** Find the optimal value function $V^\*(s)$ or $Q^\*(s, a)$.
-* **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
+
+## 2.2 What is RL? A Short Recap
+
+Reinforcement Learning (RL) focuses on training an **agent** to make decisions through interaction with an **environment**. The agent learns by receiving **rewards** for its actions and aims to **maximize cumulative reward** over time. The policy, denoted $\epsilon$, defines the agent’s decision strategy. The optimal policy $\pi^\*$ leads to the best possible long-term returns. 
+
+Two broad classes of RL methods:
+- **Policy-based methods**: Directly learn a policy that maps states to actions.
+- **Value-based methods**: Learn a value function that approximates future expected return, and derive a policy from that value function.
+   - In Value-Based RL, the agent learns a **Value Function** that maps a state (or state-action pair) to a value.
+      - **The Goal:** Find the optimal value function $V^\*(s)$ or $Q^\*(s, a)$.
+      - **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
 
 ## 2.3 Two Types of Value-Based Methods
 In value-based approaches, a policy is derived by selecting actions that maximize value (for example, greedy or $\epsilon$-greedy)
@@ -109,8 +122,8 @@ The algorithm consists of:
 3. Take action, observe reward and next state.
 4. Update the corresponding $Q$-value using:
 
-**The Q-Learning Update Rule (Bellman Optimality Equation]:**
-Q-values are updated using the Bellman optimality principle:
+**The $Q$-Learning Update Rule (Bellman Optimality Equation]:**
+$Q$-values are updated using the Bellman optimality principle:
 - **Immediate reward** + **discounted value of the greedy estimate of the best future value**.
 - $$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 - $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
@@ -122,27 +135,53 @@ Q-values are updated using the Bellman optimality principle:
 
 _Note: Off-policy means that the update uses the greedy action for the next state even if the action executed was exploratory._
 
-## 2.8 Q-Learning Example
+## 2.8 $Q$-Learning Example
 
 Imagine a grid world (`FrozenLake`):
 
 1. **Initialize:** Start with a table of zeros.
 2. **Choose Action:** Use $\epsilon$-greedy (sometimes explore randomly, sometimes pick the best known action).
 3. **Perform Action:** Move, get reward $R$, and see the next state $s'$.
-4. **Update:** Use the formula to update the specific cell in the Q-Table.
+4. **Update:** Use the formula to update the specific cell in the $Q$-Table.
 5. **Repeat:** Do this for thousands of episodes until the table converges.
+
+
+In a simple maze scenario:
+- The agent starts with a $Q$-table of zeros.
+- Using $\epsilon$-greedy selection, it explores actions and updates $Q$-values according to observed rewards and estimated future rewards.
+- As training progresses, the $Q$-table approximates optimal values and reveals the best actions.
+
+Example rewards:
+- Slight positive ($>0$) for safe states, large positive ($>>>0$ for optimal goal, large negative ($<<<0$) for harmful states. 
+
+Iterative updates gradually shape the policy toward maximum total reward.
 
 ## 2.9 Q-Learning Recap
 
+Q-Learning trains an **action-value function** using a tabular representation. It:
+- Uses TD updates to iteratively improve Q-value estimates.
+- Learns optimal policy by selecting actions with highest Q-values after training.
+- Starts with arbitrary values and converges as exploration and updates proceed.
+
+Once the $Q-$table approximates $Q^\*$, the greedy policy derived from it approximates the optimal policy. 
+
+### Key Terms
 * **Q-Table:** A matrix where rows are states and columns are actions.
 * **Exploration vs. Exploitation:** We use $\epsilon$-greedy to ensure the agent doesn't get stuck in local optima.
 * **Target:** $R + \gamma \max Q(s', a')$.
 * **TD Error:** The difference between the target and the current $Q(s, a)$.
-
+ 
 ## 2.10 Glossary
 
 * **Value-based:** Methods that find the optimal policy by learning the value of states.
 * **Q-Value:** The "Quality" or expected reward of taking a specific action in a specific state.
-* **Temporal Difference:** Updating an estimate based on another estimate.
-* **$\epsilon$-greedy:** A policy that picks a random action with probability $\epsilon$ and the best action with probability $1-\epsilon$.
+* **State-value function**: Expected return from a state following a policy. 
+* **Action-value function (Q-function)**: Expected return from a state-action pair following a policy.
+* * **Monte Carlo (MC):**  Updates values only after an entire episode ends.
+* **Temporal Difference (TD):** Updating an estimate based on another estimate.
+* **$\epsilon$-greedy strategy:** An action selection policy/method that balances exploration and exploitation by picking a random action with probability $\epsilon$ and the best action with probability $1-\epsilon$.
+* **Greedy strategy**: Always choose action with highest estimated value (exploitation only). 
 * **Convergence:** When the Q-Table values stop changing significantly, meaning the agent has found the optimal strategy.
+* **Off-policy vs On-policy**: Off-policy uses different policies for action selection during training versus evaluation; on-policy uses the same policy. 
+* **Monte Carlo vs Temporal Difference**: MC updates after an episode; TD updates step-by-step using bootstrapped estimates. 
+
