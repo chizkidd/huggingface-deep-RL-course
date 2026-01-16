@@ -27,6 +27,8 @@ Two broad classes of RL methods:
    - In Value-Based RL, the agent learns a **Value Function** that maps a state (or state-action pair) to a value.
       - **The Goal:** Find the optimal value function $V^\*(s)$ or $Q^\*(s, a)$.
       - **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
+    
+ $$\pi^*(s) = \arg \max_a Q^*(s, a)$$
 
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/0*atP0PeSrelqAd8Cp)
 
