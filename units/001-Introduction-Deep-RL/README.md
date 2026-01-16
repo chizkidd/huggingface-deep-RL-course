@@ -82,7 +82,9 @@ _Note: In this course, we use the term "state" to denote both state and observat
       > $$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$
   - This means as the time step increases (the further into the future the reward is), the less it contributes to the immediate decision.
 
-* **The Discount Rate ($\gamma$):** We define a discount rate called **gamma ()**. It must be between 0 and 1 (typically 0.95 to 0.99).
+* **The Discount Rate ($\gamma$):**
+
+We define a discount rate called **gamma ($\gamma$)**. It must be between 0 and 1 (typically 0.95 to 0.99).
   - **Larger $\gamma$ (closer to 1):** Smaller discount; the agent cares more about long-term rewards.
   - **Smaller $\gamma$ (closer to 0):** Larger discount; the agent cares more about short-term rewards (the "nearest cheese to the mouse").
 
@@ -90,8 +92,12 @@ _Note: In this course, we use the term "state" to denote both state and observat
 ## 1.4 Tasks: Episodic vs. Continuing
 
 A task is an ***instance*** of a Reinforcement Learning problem. We can have two types of tasks: episodic and continuing.
-* **Episodic Tasks:** Have a clear starting and ending point ***(a terminal state). This creates an episode:*** a list of States, Actions, rewards and new States (e.g., a game of Pong).
-* **Continuing Tasks:** Tasks that continue forever without a terminal state (e.g., automated stock trading). In this case, the agent must ***learn how to choose the best actions and simultaneously interact with the environment.***
+* **Episodic Tasks:**
+  * Have a clear starting and ending point ***(a terminal state).
+  * This creates an episode:*** a list of States, Actions, rewards and new States (e.g., a game of Pong).
+* **Continuing Tasks:**
+  * Tasks that continue forever without a terminal state (e.g., automated stock trading).
+  * In this case, the agent must ***learn how to choose the best actions and simultaneously interact with the environment.***
 
 ## 1.5 The Exploration/Exploitation Trade-off
 
