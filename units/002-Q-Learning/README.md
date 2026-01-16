@@ -16,8 +16,8 @@ In Value-Based Reinforcement Learning, the agent learns a **Value Function** tha
 ## 2.3 Two Types of Value-Based Methods
 
 1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a policy thereafter.
-  - $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
-  - $V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$
+   - $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
+   - $V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$
 
 
 2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy.
