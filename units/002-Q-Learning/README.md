@@ -88,7 +88,7 @@ $$V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]$$
 - Uses **bootstrapping**: uses estimated value of next state instead of full return.
 - More incremental and efficient than MC.
 - `TD(0)` specifically updates after one time step using:
-   - `TD target = immediate reward + γ $\gamma$ × estimated value of next state.`
+   - ***TD target = immediate reward + γ $\gamma$ × estimated value of next state.***
      
 | Feature | Monte Carlo (MC) | Temporal Difference (TD) |
 | --- | --- | --- |
