@@ -31,12 +31,12 @@ In value-based approaches, a policy is derived by selecting actions that maximiz
 
 1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a given policy thereafter. It describes how good it is to be in a given state when following policy $\pi$.
    - $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
-   - $V^\pi(s) = \mathbb{E}[ \text{cumulative reward} \mid s, \pi ]$
+   - $$V_{\pi}(s) = \mathbb{E}[G_t \mid S_t = s, \pi]$$
 
 
 
 2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states.
-   - $Q^\pi(s,a) = \mathbb{E}[ \text{return} \mid s, a, \pi ]$
+   - $$Q_{\pi}(s, a) = \mathbb{E}[G_t \mid S_t = s, A_t = a, \pi]$$
    - This is what we use in $Q$-Learning.
 
 
