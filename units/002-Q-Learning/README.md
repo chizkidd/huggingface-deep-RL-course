@@ -16,20 +16,20 @@ In Value-Based Reinforcement Learning, the agent learns a **Value Function** tha
 ## 2.3 Two Types of Value-Based Methods
 
 1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a policy thereafter.
-  * $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
-  * $V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$
+  - $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
+  - $V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$
 
 
 2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy.
-  * This is what we use in Q-Learning.
+   - This is what we use in Q-Learning.
 
 
 
 ## 2.4 The Bellman Equation
 
 The Bellman Equation is the mathematical foundation of RL. It simplifies the calculation of the value function by breaking the expected return into two parts: the immediate reward plus the discounted value of the next state.
-$$V(s) = R + \gamma V(s')$$
-$$V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$$
+- $$V(s) = R + \gamma V(s')$$
+- $$V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$$
 
 Where:
 
