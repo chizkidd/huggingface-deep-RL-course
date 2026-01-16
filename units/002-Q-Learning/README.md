@@ -36,6 +36,7 @@ The Bellman Equation is the mathematical foundation of RL. It provides a recursi
 For a state value: 
 - $$V(s) = R + \gamma V(s')$$
 - $$V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$$
+- 
 This recursion simplifies iterative computation and underpins dynamic programming and many RL algorithms.
 
 Where:
