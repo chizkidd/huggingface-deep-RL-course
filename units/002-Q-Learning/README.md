@@ -48,7 +48,7 @@ $$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s
 ## 2.4 The Bellman Equation
 
 The Bellman Equation is the mathematical foundation of RL. It provides a recursive decomposition of value functions & simplifies the calculation of the value function by breaking the expected return into two parts: the immediate reward plus the discounted value of the next state. Rather than summing all future rewards to compute value, the Bellman equation expresses value as:
-- **Immediate reward $R_{t+1}$** + **discounted value of successor state $\gamma V(s_{t+1})$**.
+- **Immediate reward $R_{t+1}$** + **Discounted value of next state $\gamma V(s_{t+1})$**.
 
 For a state value: 
 
@@ -130,7 +130,7 @@ The algorithm consists of:
 
 **The $Q$-Learning Update Rule (Bellman Optimality Equation]:**
 $Q$-values are updated using the Bellman optimality principle:
-- **Immediate reward** + **discounted value of the greedy estimate of the best future value**.
+- **Immediate reward** + **Discounted value of the greedy estimate of the best future value**.
 
 $$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
@@ -169,7 +169,7 @@ In a simple maze scenario:
 - As training progresses, the $Q$-table approximates optimal values and reveals the best actions.
 
 Example rewards:
-- Slight positive ($>0$) for safe states, large positive ($>>>0$ for optimal goal, large negative ($<<<0$) for harmful states. 
+- Slight positive ($>0$) for safe states, large positive ($>>>0$) for optimal goal, large negative ($<<<0$) for harmful states. 
 
 Iterative updates gradually shape the policy toward maximum total reward.
 
