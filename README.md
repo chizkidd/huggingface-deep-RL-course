@@ -39,5 +39,5 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/huggingface-deep-rl-study.git](https://github.com/YOUR_USERNAME/huggingface-deep-rl-study.git)
-   cd huggingface-deep-rl-study
+   git clone [https://github.com/chizkidd/huggingface-deep-RL-course.git](https://github.com/chizkidd/huggingface-deep-RL-course.git)
+   cd huggingface-deep-RL-course
