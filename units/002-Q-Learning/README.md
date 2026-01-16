@@ -14,22 +14,29 @@ In Value-Based Reinforcement Learning, the agent learns a **Value Function** tha
 * **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
 
 ## 2.3 Two Types of Value-Based Methods
+In value-based approaches, a policy is derived by selecting actions that maximize value (for example, greedy or $\epsilon$-greedy)
 
-1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a policy thereafter.
+1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a given policy thereafter. It describes how good it is to be in a given state when following policy $\pi$.
    - $V_{\pi}(s) = E_{\pi} [G_t | S_t = s]$
-   - $V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$
+   - $V^\pi(s) = \mathbb{E}[ \text{cumulative reward} \mid s, \pi ]$
 
 
-2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy.
+
+2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. Q-values allow evaluating not just states, but specific action choices in states.
+   - $Q^\pi(s,a) = \mathbb{E}[ \text{return} \mid s, a, \pi ]$
    - This is what we use in Q-Learning.
 
 
 
 ## 2.4 The Bellman Equation
 
-The Bellman Equation is the mathematical foundation of RL. It simplifies the calculation of the value function by breaking the expected return into two parts: the immediate reward plus the discounted value of the next state.
+The Bellman Equation is the mathematical foundation of RL. It provides a recursive decomposition of value functions & simplifies the calculation of the value function by breaking the expected return into two parts: the immediate reward plus the discounted value of the next state. Rather than summing all future rewards to compute value, the Bellman equation expresses value as:
+- **Immediate reward** + **discounted value of successor state**.
+
+For a state value: 
 - $$V(s) = R + \gamma V(s')$$
 - $$V(s) = \mathbb{E}[ R_{t+1} + \gamma V(s_{t+1}) ]$$
+This recursion simplifies iterative computation and underpins dynamic programming and many RL algorithms.
 
 Where:
 
@@ -37,10 +44,25 @@ Where:
 * $\gamma$: Discount factor (importance of future rewards).
 * $V(s')$: Value of the next state.
 
+The discount factor $\gamma$ adjusts how much future rewards affect current value. Values close to 1 place more emphasis on long-term reward.
+
+
 ## 2.5 Monte Carlo (MC) vs. Temporal Difference (TD)
 
-These are the two ways we update our value functions:
+These are the two ways or learning strategies we use to update our value functions: 
+### Monte Carlo (MC)
+- Updates values **only after an entire episode** completes.
+- Uses actual episode returns as targets.  
+- ***Advantage:*** accurate targets.  
+- ***Limitation:*** must wait until end of episode.
 
+### Temporal Difference (TD) Learning
+- Updates value estimates **after each step**.
+- Uses **bootstrapping**: uses estimated value of next state instead of full return.
+- More incremental and efficient than MC.
+- `TD(0)` specifically updates after one time step using:
+   - `TD target = immediate reward + γ $\gamma$ × estimated value of next state.`
+     
 | Feature | Monte Carlo (MC) | Temporal Difference (TD) |
 | --- | --- | --- |
 | **Learning** | At the end of the episode. | At every time step (Online). |
@@ -51,24 +73,53 @@ These are the two ways we update our value functions:
 ***<u>Note:</u> Q-Learning uses Temporal Difference (TD) learning.***
 
 ## 2.6 Mid-way Recap
+Summary of key points before Q-Learning:
+- We want to find the optimal policy by finding the optimal value function.
+- The value function represents the expected future discounted rewards.
+- Value functions estimate expected returns for states or state-action pairs.
+- We use the Bellman Equation to define the value of a state as the sum of immediate reward + discounted future values.
+- Value-based methods do not directly train a policy, but ***derive one from estimates.***
+- Monte Carlo and TD are two main strategies for learning value functions.
+- TD learning allows us to update our estimates at every step without waiting for the episode to end unlike MC learning which updates our estimates only at the end of the episode.
 
-* We want to find the optimal policy by finding the optimal value function.
-* The value function represents the expected future discounted rewards.
-* We use the Bellman Equation to define the value of a state as the sum of immediate reward + discounted future values.
-* TD learning allows us to update our estimates at every step without waiting for the episode to end.
+## 2.7 $Q$-Learning: The Algorithm
 
-## 2.7 Q-Learning: The Algorithm
+**$Q$-Learning** is a model-free, **off-policy, value-based** RL algorithm that uses a **TD approach** to learn optimal action-value function $Q^\*(s, a)$. It uses a **$Q$-Table** to store the $Q$-values for all state-action pairs $(s, a)$. $Q$-Learning is **off-policy** because the "acting policy" (how the agent moves, usually $\epsilon$-greedy) is **different** from the "learning policy" (which assumes the agent will take the absolute best action in the next step). The $Q$-value represents the quality of taking action $a$ in state $s$ — the expected return following that choice.
 
-Q-Learning is an **off-policy** value-based TD algorithm. It uses a **Q-Table** to store the Q-values for all state-action pairs $(s, a)$.
 
-**The Q-Learning Update Rule:**
-$$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
+### Key characteristics:
+- **Off-policy**:
+   - learning uses a different policy for action selection ($\epsilon$-greedy) and target selection (greedy).
+   - learns optimal policy independent of agent’s actions. 
+- **TD learning:** updates values step by step.  
+- **$Q$-table:** stores learned estimates of action values $Q(s, a)$ for all state-action pairs.
+
+### Exploration vs Exploitation  
+A common strategy is **epsilon-greedy**:
+
+- With probability $\epsilon$: **explore**
+- With probability $1 - \epsilon$: **exploit** best current estimate  
+
+Start with high $\epsilon$ and **decay** it over time.
+
+The algorithm consists of:
+1. Initialize $Q$-table with defaults (often zeros).
+2. Select actions using **$\epsilon$-greedy policy** to balance exploration and exploitation.
+3. Take action, observe reward and next state.
+4. Update the corresponding $Q$-value using:
+
+**The Q-Learning Update Rule (Bellman Optimality Equation]:**
+Q-values are updated using the Bellman optimality principle:
+- **Immediate reward** + **discounted value of the greedy estimate of the best future value**.
+- $$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
+- $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
 
 * **$\alpha$ (Learning Rate):** How much we update our value.
 * **$\gamma$ (Discount Factor):** How much we care about future rewards.
+* **$R_{t+1}$:** Immediate reward  
 * **$\max_{a'} Q(s', a')$:** The greedy estimate of the best future value.
 
-**Off-Policy Definition:** Q-Learning is off-policy because the "acting policy" (how the agent moves, usually $\epsilon$-greedy) is different from the "learning policy" (which assumes the agent will take the absolute best action in the next step).
+_Note: Off-policy means that the update uses the greedy action for the next state even if the action executed was exploratory._
 
 ## 2.8 Q-Learning Example
 
