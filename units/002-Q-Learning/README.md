@@ -30,14 +30,13 @@ Two broad classes of RL methods:
 In value-based approaches, a policy is derived by selecting actions that maximize value (for example, greedy or $\epsilon$-greedy)
 
 1. **State-Value Function $V(s)$:** Calculates the expected return if the agent starts in state $s$ and follows a given policy thereafter. It describes how good it is to be in a given state when following policy $\pi$.
-   - $$V_{\pi}(s) = E_{\pi} [G_t | S_t = s] = \mathbb{E}[G_t \mid S_t = s, \pi]$$
+
+$$V_{\pi}(s) = E_{\pi} [G_t | S_t = s] = \mathbb{E}[G_t \mid S_t = s, \pi]$$
 
 
+2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states. This is what we use in $Q$-Learning.
 
-3. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states. This is what we use in $Q$-Learning.
-   - $$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s, A_t = a, \pi]$$
-
-
+$$Q_{\pi}(s, a) = E_{\pi} [G_t | S_t = s, A_t = a] = \mathbb{E}[G_t \mid S_t = s, A_t = a, \pi]$$
 
 
 ## 2.4 The Bellman Equation
@@ -126,8 +125,10 @@ The algorithm consists of:
 **The $Q$-Learning Update Rule (Bellman Optimality Equation]:**
 $Q$-values are updated using the Bellman optimality principle:
 - **Immediate reward** + **discounted value of the greedy estimate of the best future value**.
-- $$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
-- $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
+
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
+
+$$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
 
 * **$\alpha$ (Learning Rate):** How much we update our value.
 * **$\gamma$ (Discount Factor):** How much we care about future rewards.
