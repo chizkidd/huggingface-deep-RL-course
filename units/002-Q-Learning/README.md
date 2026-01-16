@@ -135,13 +135,12 @@ The algorithm consists of:
 3. Take action, observe reward and next state.
 4. Update the corresponding $Q$-value using:
 
-**The $Q$-Learning Update Rule (Bellman Optimality Equation]:**
-$Q$-values are updated using the Bellman optimality principle:
-- **Immediate reward** + **Discounted value of the greedy estimate of the best future value**.
-
-$$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
-
-$$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
+   > **The $Q$-Learning Update Rule (Bellman Optimality Equation]:** $Q$-values are updated using the Bellman optimality principle:
+   > **Immediate reward** + **Discounted value of the greedy estimate of the best future value**.
+   
+   $$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
+   
+   $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \bigl[R_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)\bigr]$$
 
 * **$\alpha$ (Learning Rate):** How much we update our value.
 * **$\gamma$ (Discount Factor):** How much we care about future rewards.
@@ -162,7 +161,7 @@ In typical examples (e.g., grid worlds like `FrozenLake`):
    - Execute action → observe next state $s'$ & reward $R$
    - Update $Q(s, a)$ (specific cell in the $Q$-Table) using TD formula
    - Update $\epsilon$ (decay)
-3. Repeat until convergence ($1000$s of episodes)
+3. Repeat until convergence ($1000\s$ of episodes)
 
 Over time, $Q$-table values reflect the **expected cumulative return** for each state-action pair.
 
