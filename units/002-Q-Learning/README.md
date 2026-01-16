@@ -1,18 +1,18 @@
-# Unit 2: Introduction to Q-Learning
+# Unit 2: Introduction to $Q$-Learning
 
 This unit explores the foundations of value-based reinforcement learning. While Unit 1 introduced Deep RL using neural networks, Unit 2 focuses on tabular methods where we learn to estimate the value of states and actions manually using the Bellman Equation.
 
 ## 2.1 Introduction
 
-In this unit, we move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **Q-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
+In this unit, we move from Policy-Based methods (where we learn a policy function directly) to **Value-Based methods**. The core objective is to create a **$Q$-Table**, a cheat sheet that tells the agent the maximum expected future reward for every possible action in every possible state.
 
-This unit dives deeper into **value-based RL methods** and introduces **Q-Learning**, one of the foundational RL algorithms. It explains theoretical concepts and then applies them to simple environments such as `FrozenLake-v1` and an autonomous taxi. This unit also sets up the conceptual foundation for later units on Deep Q-Learning and `Atari` game agents. 
+This unit dives deeper into **value-based RL methods** and introduces **$Q$-Learning**, one of the foundational RL algorithms. It explains theoretical concepts and then applies them to simple environments such as `FrozenLake-v1` and an autonomous taxi. This unit also sets up the conceptual foundation for later units on Deep $Q$-Learning and `Atari` game agents. 
 
 Key learning outcomes:
-- Create a **Q-Table.**
+- Create a **$Q$-Table.**
 - Value-based methods and how they differ from policy-based approaches.
 - Contrast between Monte Carlo and Temporal Difference learning.
-- Understanding and implementing the Q-Learning algorithm from scratch. 
+- Understanding and implementing the $Q$-Learning algorithm from scratch. 
 
 
 ## 2.2 What is RL? A Short Recap
@@ -35,9 +35,9 @@ In value-based approaches, a policy is derived by selecting actions that maximiz
 
 
 
-2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. Q-values allow evaluating not just states, but specific action choices in states.
+2. **Action-Value Function $Q(s, a)$:** Calculates the expected return if the agent is in state $s$, takes action $a$, and then follows the policy thereafter. $Q$-values allow evaluating not just states, but specific action choices in states.
    - $Q^\pi(s,a) = \mathbb{E}[ \text{return} \mid s, a, \pi ]$
-   - This is what we use in Q-Learning.
+   - This is what we use in $Q$-Learning.
 
 
 
@@ -84,10 +84,10 @@ These are the two ways or learning strategies we use to update our value functio
 | **Update Base** | Actual total return  $G_t$. | Estimated return $R_{t+1} + \gamma Q(s', a')$. |
 | **Bias/Variance** | High variance, zero bias. | Low variance, some bias. |
 
-***<u>Note:</u> Q-Learning uses Temporal Difference (TD) learning.***
+***<u>Note:</u> $Q$-Learning uses Temporal Difference (TD) learning.***
 
 ## 2.6 Mid-way Recap
-Summary of key points before Q-Learning:
+Summary of key points before $Q$-Learning:
 - We want to find the optimal policy by finding the optimal value function.
 - The value function represents the expected future discounted rewards.
 - Value functions estimate expected returns for states or state-action pairs.
@@ -137,15 +137,24 @@ _Note: Off-policy means that the update uses the greedy action for the next stat
 
 ## 2.8 $Q$-Learning Example
 
-Imagine a grid world (`FrozenLake`):
+### Gridworld Case
+In typical examples (e.g., grid worlds like `FrozenLake`):
 
-1. **Initialize:** Start with a table of zeros.
-2. **Choose Action:** Use $\epsilon$-greedy (sometimes explore randomly, sometimes pick the best known action).
-3. **Perform Action:** Move, get reward $R$, and see the next state $s'$.
-4. **Update:** Use the formula to update the specific cell in the $Q$-Table.
-5. **Repeat:** Do this for thousands of episodes until the table converges.
+1. Initialize $Q$-table with zeros  
+2. For each episode:
+   - Observe current state
+   - Select an action via $\epsilon$-greedy (sometimes explore randomly, sometimes pick the best known action).
+   - Execute action → observe next state $s'$ & reward $R$
+   - Update $Q(s, a)$ (specific cell in the $Q$-Table) using TD formula
+   - Update $\epsilon$ (decay)
+3. Repeat until convergence ($1000$s of episodes)
+
+Over time, $Q$-table values reflect the **expected cumulative return** for each state-action pair.
+
+Once training ends, the optimal policy selects the **action with highest $Q$-value** in each state. 
 
 
+### Maze Scenario
 In a simple maze scenario:
 - The agent starts with a $Q$-table of zeros.
 - Using $\epsilon$-greedy selection, it explores actions and updates $Q$-values according to observed rewards and estimated future rewards.
@@ -156,32 +165,42 @@ Example rewards:
 
 Iterative updates gradually shape the policy toward maximum total reward.
 
-## 2.9 Q-Learning Recap
+## 2.9 $Q$-Learning Recap
 
-Q-Learning trains an **action-value function** using a tabular representation. It:
-- Uses TD updates to iteratively improve Q-value estimates.
-- Learns optimal policy by selecting actions with highest Q-values after training.
+$Q$-Learning trains an **action-value function** using a tabular representation. It:
+- Uses TD updates to iteratively improve $Q$-value estimates.
+- Learns optimal policy by selecting actions with highest $Q$-values after training.
 - Starts with arbitrary values and converges as exploration and updates proceed.
 
-Once the $Q-$table approximates $Q^\*$, the greedy policy derived from it approximates the optimal policy. 
+Once the $Q$-table approximates $Q^\*$, the greedy policy derived from it approximates the optimal policy. 
 
 ### Key Terms
-* **Q-Table:** A matrix where rows are states and columns are actions.
+* **$Q$-Table:** A matrix where rows are states and columns are actions.
 * **Exploration vs. Exploitation:** We use $\epsilon$-greedy to ensure the agent doesn't get stuck in local optima.
 * **Target:** $R + \gamma \max Q(s', a')$.
 * **TD Error:** The difference between the target and the current $Q(s, a)$.
  
 ## 2.10 Glossary
-
-* **Value-based:** Methods that find the optimal policy by learning the value of states.
-* **Q-Value:** The "Quality" or expected reward of taking a specific action in a specific state.
+* **Policy-based methods:** Directly learn a policy 
+* **Value-based methods:** Learn a value function and derive a policy from it. Methods that find the optimal policy by learning the value of states.
+* **$Q$-Value:** The "Quality" or expected reward of taking a specific action in a specific state.
 * **State-value function**: Expected return from a state following a policy. 
-* **Action-value function (Q-function)**: Expected return from a state-action pair following a policy.
-* * **Monte Carlo (MC):**  Updates values only after an entire episode ends.
+* **Action-value function ($Q$-function)**: Expected return from a state-action pair following a policy.
+* **Monte Carlo (MC):**  Updates values only after an entire episode ends.
 * **Temporal Difference (TD):** Updating an estimate based on another estimate.
 * **$\epsilon$-greedy strategy:** An action selection policy/method that balances exploration and exploitation by picking a random action with probability $\epsilon$ and the best action with probability $1-\epsilon$.
 * **Greedy strategy**: Always choose action with highest estimated value (exploitation only). 
-* **Convergence:** When the Q-Table values stop changing significantly, meaning the agent has found the optimal strategy.
+* **Convergence:** When the $Q$-Table values stop changing significantly, meaning the agent has found the optimal strategy.
 * **Off-policy vs On-policy**: Off-policy uses different policies for action selection during training versus evaluation; on-policy uses the same policy. 
-* **Monte Carlo vs Temporal Difference**: MC updates after an episode; TD updates step-by-step using bootstrapped estimates. 
+* **Monte Carlo vs Temporal Difference**: MC updates after an episode; TD updates step-by-step using bootstrapped estimates.
+
+## 2.11 Summary  
+Unit 2 builds the foundation of value-based reinforcement learning:
+
+- Understand value functions & Bellman equations  
+- Introduced MC vs TD learning  
+- Studied **$Q$-Learning**, the canonical value-based algorithm  
+- Provided practical strategies like epsilon-greedy exploration
+
+This prepares you for **Deep $Q$-Learning** and other advanced RL methods in the next unit.
 
