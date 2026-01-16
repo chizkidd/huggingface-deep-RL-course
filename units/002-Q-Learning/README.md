@@ -10,8 +10,8 @@ In this unit, you move from Policy-Based methods (where we learn a policy functi
 
 In Value-Based Reinforcement Learning, the agent learns a **Value Function** that maps a state (or state-action pair) to a value.
 
-* **The Goal:** Find the optimal value function $V^*(s)$ or $Q^*(s, a)$.
-* **The Logic:** If we know the value of every state, the optimal policy $\pi^*$ is simply to always take the action that leads to the state with the highest value.
+* **The Goal:** Find the optimal value function $V^\*(s)$ or $Q^\*(s, a)$.
+* **The Logic:** If we know the value of every state, the optimal policy $\pi^\*$ is simply to always take the action that leads to the state with the highest value.
 
 ## 2.3 Two Types of Value-Based Methods
 
