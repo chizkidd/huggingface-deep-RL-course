@@ -11,23 +11,23 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 
 ---
 ## Progress Tracker
+| Unit | Topic | Status | Model Hub Link | Notes Link |
+| :--- | :--- | :---: | :--- | :--- |
+| **0** | Introduction & Setup | ✅ | - | [Notes](units/001-Introduction-Deep-RL/README.md) |
+| **1** | Intro to Deep RL (`LunarLander-v3`) | ✅ | [Chiz/ppo-LunarLander-v3](https://hf.co/Chiz/ppo-LunarLander-v3) | [Notes](#) |
+| **1b** | **Bonus:** Huggy the Dog | ⬜ |  [Chiz/ppo-Huggy](https://hf.co/Chiz/ppo-Huggy) | [Notes](units/001b-Huggy-the-dog/README.md) |
+| **2** | Q-Learning (`FrozenLake-v1` & `Taxi-v3`) | 🏗️ | [Link] | [Notes](units/002-Q-Learning/README.md) |
+| **3** | Deep Q-Learning (`Atari Space Invaders`) | ⬜ | [Link] | [Notes](#) |
+| **3b** | **Bonus:** `Optuna` Hyperparameter Tuning | ⬜ | [Link] | [Notes](#) |
+| **4** | Policy Gradients (`CartPole-v1`) | ⬜ | [Link] | [Notes](#) |
+| **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](#) |
+| **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] | [Notes](#) |
+| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] | [Notes](#) |
+| **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] | [Notes](#) |
+| **8b** | PPO Part 2: `VizDoom` | ⬜ | [Link] | [Notes](#) |
+| **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](#) |
+| **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | [Link] | [Notes](#) |
 
-| Unit | Topic | Status | Model Hub Link |
-| :--- | :--- | :---: | :--- |
-| **0** | Introduction & Setup | ✅ | - |
-| **1** | Intro to Deep RL (LunarLander-v3) | ✅ | [Chiz/ppo-LunarLander-v3](https://huggingface.co/Chiz/ppo-LunarLander-v3) |
-| **1b** | **Bonus:** Huggy the Dog & Live 1 | ⬜ | [Link] |
-| **2** | Q-Learning (FrozenLake-v1 & Taxi-v3) | 🏗️ | [Link] |
-| **3** | Deep Q-Learning (Atari Space Invaders) | ⬜ | [Link] |
-| **3b** | **Bonus:** Optuna Hyperparameter Tuning | ⬜ | [Link] |
-| **4** | Policy Gradients (CartPole-v1) | ⬜ | [Link] |
-| **5** | Unity ML-Agents | ⬜ | [Link] |
-| **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] |
-| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] |
-| **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] |
-| **8b** | PPO Part 2: Doom | ⬜ | [Link] |
-| **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] |
-| **10** | **Bonus:** Imitation Learning with Godot RL Agents | ⬜ | [Link] |
 ---
 ## Resources
 
