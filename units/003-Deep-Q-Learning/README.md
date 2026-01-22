@@ -16,8 +16,8 @@ In previous units, we used **Q-Learning**, which creates a Q-table where every r
 **Deep Q-Learning** solves this by replacing the Q-table with a **Neural Network** (the Q-Network) that learns to map a state to the Q-values of all possible actions.
 
 ### The Limitation of Tabular Q-Learning 
-* **Scalability:** In environments with massive state spaces (like Atari games with pixels), creating a Q-table is computationally impossible. 
-       * *Example:* For a game with $210 \times 160$ pixels and 3 RGB channels, the number of states is $256^{(210 \times 160 \times 3)}$, which far exceeds the atoms in the observable universe. 
+* **Scalability:** In environments with massive state spaces (like Atari games with pixels), creating a Q-table is computationally impossible.
+  * *Example:* For a game with $210 \times 160$ pixels and 3 RGB channels, the number of states is $256^{(210 \times 160 \times 3)}$, which far exceeds the atoms in the observable universe. 
 * **Lack of Generalization:** Tabular RL cannot "guess" the value of a new state; it must visit every state to learn its value. 
 ---
 
