@@ -26,17 +26,15 @@ In previous units, we used **Q-Learning**, which creates a Q-table where every r
 The core difference lies in how we represent the Q-function. To solve the scalability problem, we replace the Q-table with a **Function Approximator**—specifically a **Deep Neural Network**.
 
 ### The Temporal Difference (TD) Foundation
-The transition relies on the TD update logic. For state values:
-$$V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]$$
-
-For Q-values (Tabular):
-$$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t)]$$
+The transition relies on the TD update logic. 
+- For state values: $$V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]$$
+- For Q-values (Tabular): $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t)]$$
 
 ### The Problem with Tabular Q-Learning
 
 In a table, we update individual cells using the Bellman equation. In Deep RL, we want to find a function Q(s, a; \theta)$ (where $\theta$ represents the weights of the network) that approximates the optimal Q-values.
 
- ### Why use Deep Learning? 
+### Why use Deep Learning? 
 Neural networks are excellent at identifying patterns in high-dimensional data. This allows the agent to **generalize**: if it sees a state similar to one it has seen before, it can infer the correct action without having visited that exact state. 
 
 ### The Deep Q-Network (DQN) Architecture
