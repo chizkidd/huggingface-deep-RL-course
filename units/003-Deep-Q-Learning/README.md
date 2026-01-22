@@ -1,6 +1,6 @@
 # Unit 3: Deep Q-Learning (Deep Reinforcement Learning)
 
-This document summarizes the key concepts from **Unit 3 of the Deep Reinforcement Learning course** on Hugging Face, covering Deep Q-Learning, Deep Q-Networks, the Deep Q-Learning Algorithm, and essential glossary terms.  
+This unit summarizes the key concepts from **Unit 3 of the Deep Reinforcement Learning course** on Hugging Face, covering Deep Q-Learning, Deep Q-Networks, the Deep Q-Learning Algorithm, and essential glossary terms.  
 
 We explore the transition from Tabular RL to Deep Reinforcement Learning by introducing the **Deep Q-Network (DQN)**. We shift from using a simple lookup table to using neural networks as function approximators to handle environments with massive or continuous state spaces.
 
