@@ -116,8 +116,8 @@ In basic Deep Q-learning, the same network weights ($\theta$) are used for both 
 
 Standard DQN tends to **overestimate Q-values** because it uses the maximum estimated Q for the next state. Double DQN mitigates this by decoupling action selection from target value evaluation:
 
-- Use the main network to select the argmax action,
-- Use the target network to evaluate its Q-value. 
+- Use the main network to **select the best action to take for the next state** (the argmax action: the action with the highest Q value)
+- Use the target network to calculate **the target Q-value of taking that action at the next state.** 
 
 
 ---
