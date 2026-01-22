@@ -8,7 +8,9 @@ We explore the transition from Tabular RL to Deep Reinforcement Learning by intr
 
 ## 3.1 Introduction to Deep Q-Learning
 
-In previous units, we used **Q-Learning**, which creates a Q-table where every row is a state and every column is an action. However, this becomes impossible when:
+### Q-Learning Recap
+
+Q-Learning is a **model-free, value-based RL algorithm** that learns optimal action values using the Bellman equation and temporal-difference (TD) updates. It uses a table to store estimates Q(s, a) for each state–action pair. We used **Q-Learning**, which creates a Q-table where every row is a state and every column is an action. However, this becomes impossible when:
 
 * **State spaces are huge:** For example, in Atari games, the number of possible pixel combinations is astronomical.
 * **States are continuous:** You cannot create a table for infinite decimal values.
@@ -32,35 +34,68 @@ The transition relies on the TD update logic.
 
 ### The Problem with Tabular Q-Learning
 
-In a table, we update individual cells using the Bellman equation. In Deep RL, we want to find a function Q(s, a; \theta)$ (where $\theta$ represents the weights of the network) that approximates the optimal Q-values.
+In a table, we update individual cells using the Bellman equation. In Deep RL, we want to find a function $Q(s, a; \theta)$ (where $\theta$ represents the weights of the network) that approximates the optimal Q-values.
 
 ### Why use Deep Learning? 
 Neural networks are excellent at identifying patterns in high-dimensional data. This allows the agent to **generalize**: if it sees a state similar to one it has seen before, it can infer the correct action without having visited that exact state. 
 
 ### The Deep Q-Network (DQN) Architecture
-Instead of a table, the state $s$ is fed into a neural network that outputs a vector of Q-values $[Q(s, a_1), Q(s, a_2), \dots, Q(s, a_n)]$. 
+Deep Q-Learning uses a **parametrized Q-function** $Q(s, a; \theta)$, where a deep neural network (DQN) approximates Q values for all actions given a state. The network generalizes across states, enabling learning in high-dimensional environments. 
 
+Instead of updating Q values in a table, the agent updates network parameters $\theta$ using gradient descent on a loss derived from the Bellman equation. 
+
+---
+
+## 3.3 The Deep Q-Network (DQN)
+
+A **Deep Q-Network (DQN)** is a neural network architecture that approximates the Q-function:
+
+- **Input:** Stacked frames representing the state (e.g., last 4 grayscale frames in Atari).  
+- **Output:** Q-value for each possible action. 
+
+### Preprocessing and Temporal Information
+
+Because single frames lack motion information, several frames are stacked together to capture temporal dynamics (e.g., ball movement in Pong).  
+The frames are typically:
+
+- resized (e.g., to 84×84),
+- grayscale (reducing from RGB),  
+- stacked in a sequence (e.g., 4 frames deep). 
+
+### Network Architecture
+
+The stacked frames are fed into convolutional layers that learn spatial and temporal features. The network ends with fully connected layers outputting a vector of Q-values. The state $s$ is fed into a neural network that outputs a vector of Q-values $[Q(s, a_1), Q(s, a_2), \dots, Q(s, a_n)]$. 
+
+The components of the DQN architecture is shown below:
 
 * **Input:** The state $s$ (e.g., 4 frames of a game to capture motion).
 * **Hidden Layers:** Convolutional layers (if the input is visual) or Fully Connected layers.
 * **Output:** A vector of Q-values $[Q(s, a_1), Q(s, a_2), \dots, Q(s, a_n)]$, one for each possible action in that state.
 
----
 
-## 3.3 The Deep Q-Network (DQN) Components
+## 3.4 — The Deep Q-Learning Algorithm
 
-To make training stable and successful, DQN introduces two critical concepts:
+Deep Q-Learning extends Q-Learning using a neural network, but this introduces instability due to:
+
+- Nonlinear function approximation.
+- Bootstrapping updates (targets depend on the same network). 
+
+To address this & make training stable and successful, the DQN algorithm incorporates three critical concepts:
 
 ### 1. Experience Replay
 
 In RL, consecutive experiences are highly correlated (e.g., frame $t$ is very similar to frame $t+1$). This "sequential" learning breaks the requirement of Deep Learning that data be **Independent and Identically Distributed (IID)**. 
 
-Instead of learning from transitions as they happen (which are highly correlated), we store transitions $(s, a, r, s')$ in a **Replay Buffer**.
+Instead of learning from transitions/experiencews as they happen (which are highly correlated), we store transitions $(s, a, r, s')$ in a **Replay Buffer**.
 
 **The Solution:** 
 1. Store transitions $(s, a, r, s', done)$ in a **Replay Buffer**. 
 2. During training, sample a **random batch** of experiences from this buffer. 
-3. **Benefit:** Reduces correlation between consecutive experiences and allows the network to "re-learn" from past experiences. This breaks the correlation between samples and allows the agent to learn from the same experience multiple times. 
+3. **Benefit:**
+   - Reduces correlation between consecutive experiences and allows the agent/network to "re-learn" from past experiences. It allows the agent to learn from the same experience multiple times.
+      - improves data efficiency.
+      - breaks correlation between sequential samples.
+      - reduces catastrophic forgetting.
 
 
 
@@ -68,11 +103,21 @@ Instead of learning from transitions as they happen (which are highly correlated
 In Q-learning, we update our value towards a target:
 $$Target = R + \gamma \max_{a'} Q(s', a')$$
 
-In basic Deep Q-learning, the same network weights ($\theta$) are used for both the **prediction** and the **target**. This is like a cat chasing its own tail—every time we update the weights to get closer to the target, the target itself moves. In Deep RL, if we use the same network to predict the value and calculate the target, the "target" moves every time we update the weights, leading to oscillations.
+In basic Deep Q-learning, the same network weights ($\theta$) are used for both the **prediction** and the **target**. This is like a cat chasing its own tail—every time we update the weights to get closer to the target, the target itself moves. In Deep RL, if we use the same network to predict the value and calculate the target, the "target" moves every time we update the weights, leading to oscillations which cause instability as both network predictions and targets shift simultaneously.
+
 
 **The Solution:** Use two networks:
 1.  **The Q-Network (Online Network):** Trained to update weights at every step.
 2.  **The Target Network:** A copy of the Q-network used to calculate the target. Its weights ($\theta^-$) are frozen and only updated to match the Online Network every $C$ steps.
+
+
+
+### 3. Double Deep Q-Learning (Double DQN)
+
+Standard DQN tends to **overestimate Q-values** because it uses the maximum estimated Q for the next state. Double DQN mitigates this by decoupling action selection from target value evaluation:
+
+- Use the main network to select the argmax action,
+- Use the target network to evaluate its Q-value. 
 
 
 ---
