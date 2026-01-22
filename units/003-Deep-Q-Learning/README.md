@@ -58,31 +58,17 @@ In RL, consecutive experiences are highly correlated (e.g., frame $t$ is very si
 Instead of learning from transitions as they happen (which are highly correlated), we store transitions $(s, a, r, s')$ in a **Replay Buffer**.
 
 **The Solution:** 
-* Store transitions $(s, a, r, s', done)$ in a **Replay Buffer**. 
-* During training, sample a **random batch** of experiences from this buffer. 
-* This breaks the correlation between samples and allows the agent to learn from the same experience multiple times. 
-* **Benefit:** Reduces correlation between consecutive experiences and allows the network to "re-learn" from past experiences.
+1. Store transitions $(s, a, r, s', done)$ in a **Replay Buffer**. 
+2. During training, sample a **random batch** of experiences from this buffer. 
+3. **Benefit:** Reduces correlation between consecutive experiences and allows the network to "re-learn" from past experiences. This breaks the correlation between samples and allows the agent to learn from the same experience multiple times. 
+
+
 
 ### 2. Fixed Q-Targets
-
-In standard Q-Learning, we update the Q-value toward a target:
-$$Target = r + \gamma \max_{a'} Q(s', a')$$
-
-
-In Deep RL, if we use the same network to predict the value and calculate the target, the "target" moves every time we update the weights, leading to oscillations.
-
-* **Solution:** We use two networks:
-1. **The Q-Network (D-Network):** Updated every iteration.
-2. **The Target Network:** A copy of the Q-network that is frozen and only updated every $C$ steps.
-
-
-
-
-
-### 1. Fixed Q-Targets
 In Q-learning, we update our value towards a target:
 $$Target = R + \gamma \max_{a'} Q(s', a')$$
-In basic Deep Q-learning, the same network weights ($\theta$) are used for both the **prediction** and the **target**. This is like a cat chasing its own tail—every time we update the weights to get closer to the target, the target itself moves.
+
+In basic Deep Q-learning, the same network weights ($\theta$) are used for both the **prediction** and the **target**. This is like a cat chasing its own tail—every time we update the weights to get closer to the target, the target itself moves. In Deep RL, if we use the same network to predict the value and calculate the target, the "target" moves every time we update the weights, leading to oscillations.
 
 **The Solution:** Use two networks:
 1.  **The Q-Network (Online Network):** Trained to update weights at every step.
@@ -90,31 +76,10 @@ In basic Deep Q-learning, the same network weights ($\theta$) are used for both 
 
 
 ---
-
-## 3.4 The Deep Q-Learning Algorithm
-
-The training process follows these steps:
-
-1. **Initialize** the Replay Memory $B$, the Q-Network with weights $\theta$, and the Target Network with weights $\theta^- = \theta$.
-2. **For each episode:**
-* Observe the initial state .
-* **Choose action $a$** using an $\epsilon$-greedy policy (explore vs. exploit).
-* **Execute $a$**, get reward $r$ and next state $s'$.
-* **Store** the transition $(s, a, r, s')$ in the Replay Buffer.
-* **Sample** a random batch of transitions from the buffer.
-* **Calculate the loss:** The squared difference between the Target Q-value and the Predicted Q-value.
-$$Loss = (r + \gamma \max_{a'} Q(s', a'; \theta^-) - Q(s, a; \theta))^2$$
-
-
-* **Perform Gradient Descent** to minimize the loss.
-* **Periodically update** the Target Network weights ($\theta^- \leftarrow \theta$).
-
----
-
 ## 3.4 The Deep Q-Algorithm
 The training loop for DQN follows these steps:
 
-1.  **Initialize** the Replay Buffer, the Online Network ($Q_\theta$), and the Target Network ($Q_{\theta^-}$).
+1.  **Initialize** the Replay Buffer $B$, the Online Network ($Q_\theta$), and the Target Network ($Q_{\theta^-}$).
 2.  **Choose Action:** Use an $\epsilon$-greedy policy to select an action $a$.
 3.  **Execute:** Perform action $a$, observe reward $r$ and new state $s'$.
 4.  **Store:** Save the transition $(s, a, r, s', done)$ in the Replay Buffer.
@@ -124,8 +89,9 @@ The training loop for DQN follows these steps:
     * Otherwise: $Y_i = r + \gamma \max_{a'} Q_{\theta^-}(s', a')$
 7.  **Loss Function:** Compute the Mean Squared Error (MSE) loss:
     $$Loss = (Y_i - Q_\theta(s, a))^2$$
-8.  **Optimize:** Perform Gradient Descent to update the Online Network $\theta$.
+8.  **Optimize:** Perform Gradient Descent to minimize the loss and update the Online Network $\theta$.
 9.  **Update Target:** Every $C$ steps, copy weights $\theta \to \theta^-$.
+10.  **Repeat** steps 2 to 9 until convergence
 
 
 ---
@@ -137,6 +103,12 @@ The training loop for DQN follows these steps:
 
 | Term | Definition |
 | --- | --- |
+| **Deep Q-Learning** | Uses neural networks to approximate Q-values for environments with large state spaces. |
+| **Deep Q-Network (DQN)** | A neural network that predicts Q(s, a) for all possible actions given a state input. |
+| **Experience Replay** | Memory storing transitions (s, a, r, s′) used for random mini-batch training to reduce correlation and improve efficiency. |
+| **Target Network** | A separate neural network used to compute stable target Q-values, periodically synced with the main network. |
+| **Double DQN** | Variation of DQN that uses two networks to reduce Q-value overestimation. |
+| **Temporal Limitation** | Single frames lack motion information; hence, multiple frames are stacked for DQN input. |
 | **Function Approximator** | A statistical tool/model (like a Neural Network) used to estimate a function when the input space is too large for a table. |
 | **Exploration-Exploitation Tradeoff** | The balance between trying new actions ($\epsilon$) and choosing the best-known action. |
 | **Temporal Difference (TD) Error** | The difference between the estimated Q-value and the actual reward plus discounted future reward. |
