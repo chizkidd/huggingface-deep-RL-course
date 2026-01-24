@@ -1,4 +1,4 @@
-# Unit 3: Deep Q-Learning (Deep Reinforcement Learning)
+# Unit 3: Deep Q-Learning 
 
 This unit summarizes the key concepts from **Unit 3 of the Deep Reinforcement Learning course** on Hugging Face, covering Deep Q-Learning, Deep Q-Networks, the Deep Q-Learning Algorithm, and essential glossary terms.  
 
