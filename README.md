@@ -14,11 +14,11 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | Unit | Topic | Status | Model Hub Link | Notes Link |
 | :--- | :--- | :---: | :--- | :--- |
 | **0** | Introduction & Setup | ✅ | - | [Notes](units/000-Course-Setup/README.md) |
-| **1** | Intro to Deep RL (`LunarLander-v3`) | ✅ | [Chiz/ppo-LunarLander-v3](https://hf.co/Chiz/ppo-LunarLander-v3) | [Notes](units/001-Introduction-Deep-RL/README.md) |
-| **1b** | **Bonus:** `Huggy-the-Dog` | ✅ |  [Chiz/ppo-Huggy](https://hf.co/Chiz/ppo-Huggy) | [Notes](units/001b-Huggy-the-dog/README.md) |
-| **2** | Q-Learning (`FrozenLake-v1` & `Taxi-v3`) | 🏗️ | [Chiz/q-FrozenLake-v1-4x4-noSlippery](https://hf.co/Chiz/q-FrozenLake-v1-4x4-noSlippery), [Chiz/q-Taxi-v3](https://hf.co/Chiz/q-Taxi-v3) | [Notes](units/002-Q-Learning/README.md) |
-| **3** | Deep Q-Learning (`Atari Space Invaders`) | ⬜ | [Link] | [Notes](units/003-Deep-Q-Learning/README.md) |
-| **3b** | **Bonus:** `Optuna` Hyperparameter Tuning | ⬜ | [Link] | [Notes](#) |
+| **1** | Intro to Deep RL (`LunarLander-v3`) | ✅ | [ppo-LunarLander-v3](https://hf.co/Chiz/ppo-LunarLander-v3) | [Notes](units/001-Introduction-Deep-RL/README.md) |
+| **1b** | **Bonus:** `Huggy-the-Dog` | ✅ |  [ppo-Huggy](https://hf.co/Chiz/ppo-Huggy) | [Notes](units/001b-Huggy-the-dog/README.md) |
+| **2** | Q-Learning (`FrozenLake-v1` & `Taxi-v3`) | ✅ | [q-FrozenLake-v1-4x4-noSlippery](https://hf.co/Chiz/q-FrozenLake-v1-4x4-noSlippery),<br> [q-Taxi-v3](https://hf.co/Chiz/q-Taxi-v3) | [Notes](units/002-Q-Learning/README.md) |
+| **3** | Deep Q-Learning (`Atari Space Invaders`) | ✅ | [dqn-SpaceInvadersNoFrameskip-v4](https://hf.co/Chiz/dqn-SpaceInvadersNoFrameskip-v4) | [Notes](units/003-Deep-Q-Learning/README.md) |
+| **3b** | **Bonus:** `Optuna` Hyperparameter Tuning | 🏗️ | [Link] | [Notes](units/003b-Optuna/README.md) |
 | **4** | Policy Gradients (`CartPole-v1`) | ⬜ | [Link] | [Notes](#) |
 | **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](#) |
 | **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] | [Notes](#) |
