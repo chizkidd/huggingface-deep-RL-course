@@ -963,6 +963,7 @@ def sample_architecture(trial):
 - [HuggingFace Deep RL Course - Unit Bonus 2](https://huggingface.co/learn/deep-rl-course/unitbonus2/introduction)
 - [Antonin Raffin's Blog - Part 1: Visual Guide](https://araffin.github.io/post/hyperparam-tuning/)
 - [Antonin Raffin's Blog - Part 2: Practical Implementation](https://araffin.github.io/post/optuna/)
+- [Hands-on RL for Robotics with EAGERx and Stable-Baselines3, ICRA 2022](https://araffin.github.io/tools-for-robotic-rl-icra2022/)
 - [ICRA 2022 Tutorial Slides](https://araffin.github.io/slides/icra22-hyperparam-opt/)
 - [DataCamp: Optuna for Deep RL](https://www.datacamp.com/tutorial/optuna)
 
