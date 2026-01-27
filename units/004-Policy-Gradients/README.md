@@ -74,7 +74,7 @@ Q(s,a) → π(s) = argmax_a Q(s,a)
 - Use exploration strategies like ε-greedy
 - Examples: Q-Learning, DQN, Double DQN
 
-**Objective**: Minimize loss between predicted and target values
+**Objective**: Minimize loss between predicted and target values<br>
 $$L = \mathbb{E}[(Q_{\theta}(s,a) - Q^{target}(s,a))^2]$$
 
 #### B. Policy-Based Methods
@@ -91,8 +91,8 @@ State → Policy Network → Action Probabilities
 - Use gradient ascent to optimize parameters
 - Examples: REINFORCE, Policy Gradient
 
-**Objective**: Maximize expected return
-$$J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}}[R(\tau)]$$
+**Objective**: Maximize expected return<br>
+$$J(\theta) = \mathbb{E}\_{\tau \sim \pi_{\theta}}[R(\tau)]$$
 
 ![Policy Based](https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit6/policy_based.png)
 
