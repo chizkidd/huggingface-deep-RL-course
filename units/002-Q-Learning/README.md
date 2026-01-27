@@ -161,7 +161,7 @@ In typical examples (e.g., grid worlds like `FrozenLake`):
    - Execute action → observe next state $s'$ & reward $R$
    - Update $Q(s, a)$ (specific cell in the $Q$-Table) using TD formula
    - Update $\epsilon$ (decay)
-3. Repeat until convergence ($1000\s$ of episodes)
+3. Repeat until convergence ($1000s$ of episodes)
 
 Over time, $Q$-table values reflect the **expected cumulative return** for each state-action pair.
 
