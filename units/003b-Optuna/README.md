@@ -100,7 +100,7 @@ When tuning hyperparameters, you face a fundamental tradeoff:
 
 ### What is Optuna?
 
-Optuna is an automatic hyperparameter optimization framework designed specifically for machine learning. It was introduced in the paper "[Optuna: A Next-generation Hyperparameter Optimization Framework](https://arxiv.org/pdf/1907.10902)" (KDD 2019).
+Optuna is an automatic hyperparameter optimization framework designed specifically for machine learning. It was introduced in the paper ["Optuna: A Next-generation Hyperparameter Optimization Framework"](https://arxiv.org/pdf/1907.10902) (KDD 2019).
 
 ### Key Features
 
