@@ -1,20 +1,20 @@
 # Unit 3b: Optuna Hyperparameter Tuning
 
 ## Table of Contents
-1. [Introduction to Hyperparameter Tuning](#introduction)
-2. [Why Hyperparameter Tuning Matters in Deep RL](#why-it-matters)
-3. [Optuna Framework Overview](#optuna-overview)
-4. [Core Components of Hyperparameter Optimization](#core-components)
-5. [Search Strategies](#search-strategies)
-6. [Pruning Strategies](#pruning-strategies)
-7. [Implementing Optuna with Stable-Baselines3](#implementation)
-8. [Practical Guidelines and Best Practices](#best-practices)
-9. [Advanced Topics](#advanced-topics)
-10. [Resources and References](#resources)
+1. [Introduction to Hyperparameter Tuning](#1-introduction-to-hyperparameter-tuning)
+2. [Why Hyperparameter Tuning Matters in Deep RL](#2-why-hyperparameter-tuning-matters-in-deep-rl)
+3. [Optuna Framework Overview](#3-optuna-framework-overview)
+4. [Core Components of Hyperparameter Optimization](#4-core-components-of-hyperparameter-optimization)
+5. [Search Strategies](#5-search-strategies)
+6. [Pruning Strategies](#6-pruning-strategies)
+7. [Implementing Optuna with Stable-Baselines3](#7-implementing-optuna-with-stable-baselines3)
+8. [Practical Guidelines and Best Practices](#8-practical-guidelines-and-best-practices)
+9. [Advanced Topics](#9-advanced-topics)
+10. [Resources and References](#10-resources-and-references)
 
 ---
 
-## 1. Introduction to Hyperparameter Tuning {#introduction}
+## 1. Introduction to Hyperparameter Tuning
 
 ### What is Hyperparameter Tuning?
 
@@ -44,7 +44,7 @@ Even with just 2 candidate values per hyperparameter: **2^8 = 256 experiments**!
 
 ---
 
-## 2. Why Hyperparameter Tuning Matters in Deep RL {#why-it-matters}
+## 2. Why Hyperparameter Tuning Matters in Deep RL
 
 ### Impact on Performance
 
@@ -96,7 +96,7 @@ When tuning hyperparameters, you face a fundamental tradeoff:
 
 ---
 
-## 3. Optuna Framework Overview {#optuna-overview}
+## 3. Optuna Framework Overview
 
 ### What is Optuna?
 
@@ -145,7 +145,7 @@ print(study.best_value)   # E.g., 4.45e-06
 
 ---
 
-## 4. Core Components of Hyperparameter Optimization {#core-components}
+## 4. Core Components of Hyperparameter Optimization
 
 ### The Two Main Components
 
@@ -224,7 +224,7 @@ pruner = HyperbandPruner()
 
 ---
 
-## 5. Search Strategies {#search-strategies}
+## 5. Search Strategies
 
 ### Grid Search (Not Recommended)
 
@@ -295,7 +295,7 @@ batch_size = random.choice([32, 64, 128, 256])
 
 ---
 
-## 6. Pruning Strategies {#pruning-strategies}
+## 6. Pruning Strategies
 
 ### Why Pruning?
 
@@ -363,7 +363,7 @@ Consider 100 trials with budget of 10,000 steps each:
 
 ---
 
-## 7. Implementing Optuna with Stable-Baselines3 {#implementation}
+## 7. Implementing Optuna with Stable-Baselines3
 
 ### Complete Implementation Example
 
@@ -640,7 +640,7 @@ The dashboard provides:
 
 ---
 
-## 8. Practical Guidelines and Best Practices {#best-practices}
+## 8. Practical Guidelines and Best Practices
 
 ### 8.1 Start Simple
 
@@ -813,7 +813,7 @@ Example timeline for PPO on Pendulum-v1:
 
 ---
 
-## 9. Advanced Topics {#advanced-topics}
+## 9. Advanced Topics
 
 ### 9.1 Multi-Objective Optimization
 
@@ -951,7 +951,7 @@ def sample_architecture(trial):
 
 ---
 
-## 10. Resources and References {#resources}
+## 10. Resources and References
 
 ### Official Documentation
 - [Optuna Documentation](https://optuna.readthedocs.io/)
@@ -967,9 +967,8 @@ def sample_architecture(trial):
 - [DataCamp: Optuna for Deep RL](https://www.datacamp.com/tutorial/optuna)
 
 ### Video Resources
-- ICRA 2022 Tutorial: Automatic Hyperparameter Optimization (Antonin Raffin)
-- Optuna Tutorial Videos on YouTube
-- HuggingFace Deep RL Course Videos
+- ICRA 2022 Tutorial: Automatic Hyperparameter Optimization (Antonin Raffin) [Link](https://www.youtube.com/watch?v=AidFTOdGNFQ)
+- Optuna Tutorial Video on YouTube [Link](https://www.youtube.com/watch?v=ihP7E76KGOI)
 
 ### Research Papers
 - Akiba et al. (2019). "Optuna: A Next-generation Hyperparameter Optimization Framework". KDD.
