@@ -1,4 +1,4 @@
-![Sanitizer Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/sanitize.yml/badge.svg)
+![Sanitizer Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/clean_notebooks.yml/badge.svg)
 
 # Hugging Face Deep RL Course 
 
