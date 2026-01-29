@@ -77,6 +77,8 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
 4. **The Expectation:**
 
 <center>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$</center>
+
+
 5. **Final Formula:** 
 
 <center>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$</center>
