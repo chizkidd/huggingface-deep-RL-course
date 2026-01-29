@@ -66,6 +66,11 @@ $$\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$$
 
 ## 4.5 The Policy Gradient Theorem
 
+This video provides a visual and intuitive breakdown of how the Policy Gradient Theorem turns complex trajectory probabilities into a simple, implementable formula.
+
+![Understanding Policy Gradient Theorem](https://www.youtube.com/watch?v=cQfOQcpYRzE)
+
+
 We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, directly because the environment's transition dynamics are **unknown and non-differentiable.** The **Policy Gradient Theorem** provides a way to compute the gradient without knowing the environment's transitions. It provides an analytic expression for the gradient that does not involve the derivative of the state-transition probabilities.
 
 ### Simplified Derivation:
@@ -108,6 +113,4 @@ Where $G_t$ is the **Return-to-go** (cumulative future reward from time $t$, or 
 * **Log-Derivative Trick:** A mathematical identity.trick used to transform the gradient of a probability distribution into an expectation that can be sampled.
 * **REINFORCE:** A basic Monte Carlo policy gradient algorithm that uses full episode returns to update policy parameters.
 
-[Understanding Policy Gradient Theorem](https://www.youtube.com/watch?v=cQfOQcpYRzE)
 
-This video provides a visual and intuitive breakdown of how the Policy Gradient Theorem turns complex trajectory probabilities into a simple, implementable formula.
