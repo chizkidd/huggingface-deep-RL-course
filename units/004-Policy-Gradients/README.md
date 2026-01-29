@@ -54,10 +54,12 @@ In policy-based reinforcement learning, we aim to find the optimal parameters $\
 ## 4.4 Policy Gradient (The Objective)
 
 Our goal is to find $\theta$ that maximizes the expected return $J(\theta)$:
+
 $$J(\theta) = E_{\tau \sim \pi_\theta} [R(\tau)]$$
 
 Where $\tau$ is a trajectory $(s_0, a_0, r_1, s_1, ...)$ and $R(\tau)$ is the total reward of that trajectory.
 Since we want to maximize this, we use **Gradient Ascent**:
+
 $$\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$$
 
 ---
@@ -72,16 +74,18 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
 2. **The Gradient:** $\nabla_\theta J(\theta) = \nabla_\theta \sum_{\tau} P(\tau; \theta) R(\tau) = \sum_{\tau} \nabla_\theta P(\tau; \theta) R(\tau)$
 3. **The Log-Derivative Trick:** Since $\nabla_\theta \log P = \frac{\nabla_\theta P}{P}$, we can replace $\nabla_\theta P$ with $P \nabla_\theta \log P$.
       - We use the identity $\nabla_\theta P(\tau; \theta) = P(\tau; \theta) \frac{\nabla_\theta P(\tau; \theta)}{P(\tau; \theta)} = P(\tau; \theta) \nabla_\theta \log P(\tau; \theta)$.
-5. **The Expectation:** $$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$
-6. **Final Formula:** $$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
+5. **The Expectation:** <br>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$
+8. **Final Formula:** <br>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
 
 
 ### The "Reinforce" Update:
 
 In practice, we use a sample-based estimate (Monte Carlo). For each step $t$:
+
 $$\nabla_\theta J(\theta) \approx \nabla_\theta \log \pi_\theta(a_t|s_t) G_t$$
 
 By expanding $P(\tau; \theta)$ and removing terms that don't depend on $\theta$, we get the practical update rule:
+
 $$\nabla_\theta J(\theta) \approx \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) G_t$$
 
 Where $G_t$ is the **Return-to-go** (cumulative future reward from time $t$ or sum of future rewards).
