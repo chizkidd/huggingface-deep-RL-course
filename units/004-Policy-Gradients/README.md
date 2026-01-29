@@ -71,6 +71,7 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
 The video below provides a visual and intuitive breakdown of how the Policy Gradient Theorem turns complex trajectory probabilities into a simple, implementable formula.
 
 _Click the image below to watch the video_
+
 [![Understanding Policy Gradient Theorem](https://img.youtube.com/vi/cQfOQcpYRzE/0.jpg)](https://www.youtube.com/watch?v=cQfOQcpYRzE)
 
 
