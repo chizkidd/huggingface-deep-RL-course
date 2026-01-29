@@ -76,12 +76,12 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
       - We use the identity $\nabla_\theta P(\tau; \theta) = P(\tau; \theta) \frac{\nabla_\theta P(\tau; \theta)}{P(\tau; \theta)} = P(\tau; \theta) \nabla_\theta \log P(\tau; \theta)$.
 4. **The Expectation:**
 
-<center>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$</center>
+$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$
 
 
 5. **Final Formula:** 
 
-<center>$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$</center>
+$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
 
 
 ### The "Reinforce" Update:
