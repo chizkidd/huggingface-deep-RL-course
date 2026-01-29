@@ -85,7 +85,7 @@ $$\nabla_\theta P(\tau; \theta) = P(\tau; \theta) \frac{\nabla_\theta P(\tau; \t
 
 4. **Final Formula (The Expectation):** 
 
-$$\nabla_\theta J(\theta)  = E_{\tau \sim \pi_\theta} \left[\sum_{t=0}^{T} \nabla_\theta \log P(\tau; \theta) R(\tau) \right] = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
+$$\nabla_\theta J(\theta)  = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right] = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
 
 
 ### The "Reinforce" Update:
