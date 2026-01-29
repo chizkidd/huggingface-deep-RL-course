@@ -83,23 +83,14 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
 
 $$\nabla_\theta P(\tau; \theta) = P(\tau; \theta) \frac{\nabla_\theta P(\tau; \theta)}{P(\tau; \theta)} = P(\tau; \theta) \nabla_\theta \log P(\tau; \theta)$$
 
-4 **The Expectation:**
+4. **Final Formula (The Expectation):** 
 
-$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]$$
-
-
-5. **Final Formula:** 
-
-$$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
+$$\nabla_\theta J(\theta)  = E_{\tau \sim \pi_\theta} \left[\sum_{t=0}^{T} \nabla_\theta \log P(\tau; \theta) R(\tau) \right] = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]$$
 
 
 ### The "Reinforce" Update:
 
-In practice, we use a sample-based estimate (Monte Carlo). For each step $t$:
-
-$$\nabla_\theta J(\theta) \approx \nabla_\theta \log \pi_\theta(a_t|s_t) G_t$$
-
-By expanding $P(\tau; \theta)$ and removing terms that don't depend on $\theta$, we get the practical update rule:
+In practice, we use a sample-based estimate (Monte Carlo). By expanding $P(\tau; \theta)$ and removing terms that don't depend on $\theta$, we get the practical update rule (For each step $t$):
 
 $$\nabla_\theta J(\theta) \approx \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) G_t$$
 
