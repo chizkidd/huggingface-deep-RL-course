@@ -1,3 +1,5 @@
+![Sanitizer Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/sanitize.yml/badge.svg)
+
 # Hugging Face Deep RL Course 
 
 This repository documents my journey through the [Hugging Face Deep Reinforcement Learning Course](https://huggingface.co/learn/deep-rl-course/). It contains my progress, notes, implementations, notebooks, environment setups, and the agents I've trained to master various tasks.
