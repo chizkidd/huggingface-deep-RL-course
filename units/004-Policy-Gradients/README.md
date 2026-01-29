@@ -74,8 +74,10 @@ We cannot calculate the gradient of $J(\theta)$, $\nabla_\theta J(\theta)$, dire
 2. **The Gradient:** $\nabla_\theta J(\theta) = \nabla_\theta \sum_{\tau} P(\tau; \theta) R(\tau) = \sum_{\tau} \nabla_\theta P(\tau; \theta) R(\tau)$
 3. **The Log-Derivative Trick:** Since $\nabla_\theta \log P = \frac{\nabla_\theta P}{P}$, we can replace $\nabla_\theta P$ with $P \nabla_\theta \log P$.
       - We use the identity $\nabla_\theta P(\tau; \theta) = P(\tau; \theta) \frac{\nabla_\theta P(\tau; \theta)}{P(\tau; \theta)} = P(\tau; \theta) \nabla_\theta \log P(\tau; \theta)$.
-5. **The Expectation:** <br>$$\begin{center}\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]\end{center}$$
-8. **Final Formula:** <br>$$\begin{center}\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]\end{center}$$
+4. **The Expectation:** <br>
+$$\begin{center}\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log P(\tau; \theta) R(\tau) \right]\end{center}$$
+5. **Final Formula:** <br>
+$$\begin{center}\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]\end{center}$$
 
 
 ### The "Reinforce" Update:
