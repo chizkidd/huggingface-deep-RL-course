@@ -30,6 +30,9 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](#) |
 | **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | [Link] | [Notes](#) |
 
+
+Currently ongoing ...
+
 ---
 ## Resources
 
