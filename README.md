@@ -21,14 +21,14 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **2** | Q-Learning (`FrozenLake-v1` & `Taxi-v3`) | ✅ | [q-FrozenLake-v1-4x4-noSlippery](https://hf.co/Chiz/q-FrozenLake-v1-4x4-noSlippery),<br> [q-Taxi-v3](https://hf.co/Chiz/q-Taxi-v3) | [Notes](units/002-Q-Learning/README.md) |
 | **3** | Deep Q-Learning (`Atari Space Invaders`) | ✅ | [dqn-SpaceInvadersNoFrameskip-v4](https://hf.co/Chiz/dqn-SpaceInvadersNoFrameskip-v4) | [Notes](units/003-Deep-Q-Learning/README.md) |
 | **3b** | **Bonus:** `Optuna` Hyperparameter Tuning | 🏗️ | [Link] | [Notes](units/003b-Optuna/README.md) |
-| **4** | Policy Gradients (`CartPole-v1`) | ✅ | [Reinforce-CartPole-v1](https://hf.co/Chiz/Reinforce-CartPole-v2),<br> [Pixelcopter-PLE-v0](https://hf.co/Chiz/Reinforce-Pixelcopter-PLE-v0) | [Notes](units/004-Policy-Gradients/README.md) |
-| **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](#) |
-| **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] | [Notes](#) |
-| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] | [Notes](#) |
-| **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] | [Notes](#) |
+| **4** | Policy Gradients (`CartPole-v1`) | ✅ | [Reinforce-CartPole-v2](https://hf.co/Chiz/Reinforce-CartPole-v2),<br> [Pixelcopter-PLE-v0](https://hf.co/Chiz/Reinforce-Pixelcopter-PLE-v0) | [Notes](units/004-Policy-Gradients/README.md) |
+| **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](units/005-Unity-ML-Agents/README.md) |
+| **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] | [Notes](units/006-Actor-Critic/README.md) |
+| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] | [Notes](units/007-Multi-Agent-RL/README.md) |
+| **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] | [Notes](units/008-PPO/README.md) |
 | **8b** | PPO Part 2: `VizDoom` | ⬜ | [Link] | [Notes](#) |
-| **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](#) |
-| **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | [Link] | [Notes](#) |
+| **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](units/009-Advanced-Topics-RL/README.md) |
+| **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | [Link] | [Notes](units/010-Imitation-Learning/README.md) |
 
 
 Currently ongoing ...
