@@ -2,20 +2,21 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-1. [What is RL? A Short Recap](#what-is-rl-a-short-recap)
-1. [The Two Types of Value-Based Methods](#the-two-types-of-value-based-methods)
-1. [The Bellman Equation](#the-bellman-equation)
-1. [Monte Carlo vs Temporal Difference Learning](#monte-carlo-vs-temporal-difference-learning)
-1. [Mid-way Recap](#mid-way-recap)
-1. [Introducing Q-Learning](#introducing-q-learning)
-1. [A Q-Learning Example](#a-q-learning-example)
-1. [Q-Learning Recap](#q-learning-recap)
-1. [Glossary](#glossary)
+1. [Introduction](#1-introduction)
+2. [What is RL? A Short Recap](#2-what-is-rl-a-short-recap)
+3. [The Two Types of Value-Based Methods](#3-the-two-types-of-value-based-methods)
+4. [The Bellman Equation](#4-the-bellman-equation)
+5. [Monte Carlo vs Temporal Difference Learning](#5-monte-carlo-vs-temporal-difference-learning)
+6. [Mid-way Recap](#6-mid-way-recap)
+7. [Introducing Q-Learning](#7-introducing-q-learning)
+8. [The Q-Learning Algorithm](#8-the-q-learning-algorithm)
+9. [A Q-Learning Example](#8-a-q-learning-example)
+10. [Q-Learning Recap](#9-q-learning-recap)
+11. [Glossary](#10-glossary)
 
 -----
 
-## Introduction
+## 1. Introduction
 
 In Unit 2, we dive deeper into **value-based methods** in Reinforcement Learning and study our first RL algorithm: **Q-Learning**.
 
@@ -39,7 +40,7 @@ This unit is fundamental for understanding Deep Q-Learning, which was the first 
 
 -----
 
-## What is RL? A Short Recap
+## 2. What is RL? A Short Recap
 
 ### Core Concepts
 
@@ -80,7 +81,7 @@ The goal is to find the **optimal policy π*** that leads to the best expected c
 
 -----
 
-## The Two Types of Value-Based Methods
+## 3. The Two Types of Value-Based Methods
 
 ### Overview
 
@@ -154,7 +155,7 @@ Both value functions require calculating **expected returns**, which means:
 
 -----
 
-## The Bellman Equation
+## 4. The Bellman Equation
 
 ### Purpose
 
@@ -246,7 +247,7 @@ This makes computation much more efficient!
 
 -----
 
-## Monte Carlo vs Temporal Difference Learning
+## 5. Monte Carlo vs Temporal Difference Learning
 
 ### Overview
 
@@ -399,7 +400,7 @@ New V(S_0) = 0.1
 
 -----
 
-## Mid-way Recap
+## 6. Mid-way Recap
 
 ### Value-Based Methods Summary
 
@@ -441,7 +442,7 @@ Both methods aim to learn value functions, but differ in:
 
 -----
 
-## Introducing Q-Learning
+## 7. Introducing Q-Learning
 
 ### What is Q-Learning?
 
@@ -547,7 +548,7 @@ Optimal Q-function → Optimal Q-table → Optimal Policy
 
 -----
 
-## The Q-Learning Algorithm
+## 8. The Q-Learning Algorithm
 
 ### Pseudocode Overview
 
@@ -794,7 +795,7 @@ Q(S_t, A_t) = Q(S_t, A_t) + α[R_{t+1} + γ * Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t)]
 
 -----
 
-## A Q-Learning Example
+## 9. A Q-Learning Example
 
 Let’s walk through a complete example step by step.
 
@@ -986,7 +987,7 @@ Optimal Q-table → Best action at each state → Optimal policy
 
 -----
 
-## Q-Learning Recap
+## 10. Q-Learning Recap
 
 ### What is Q-Learning?
 
@@ -1053,7 +1054,7 @@ For each episode:
 
 -----
 
-## Glossary
+## 11. Glossary
 
 ### Main Concepts
 
