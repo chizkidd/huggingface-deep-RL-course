@@ -1951,4 +1951,5 @@ AI vs AI Competition
 
 ---
 
-*These notes cover Unit 5: Introduction to Unity ML-Agents from the Hugging Face Deep RL Course. Practice training agents in both SnowballTarget and Pyramids environments to solidify your understanding of Unity ML-Agents and curiosity-driven learning!*
+
+*These notes cover Unit 5: Introduction to Unity ML-Agents from the Hugging Face Deep RL Course. Practice training agents in both `SnowballTarget` and `Pyramids` environments to solidify understanding of Unity ML-Agents and curiosity-driven learning!*
