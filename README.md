@@ -24,7 +24,7 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **4** | Policy Gradients (`CartPole-v1`) | ✅ | [Reinforce-CartPole-v2](https://hf.co/Chiz/Reinforce-CartPole-v2),<br> [Pixelcopter-PLE-v0](https://hf.co/Chiz/Reinforce-Pixelcopter-PLE-v0) | [Notes](units/004-Policy-Gradients/README.md) |
 | **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](units/005-Unity-ML-Agents/README.md) |
 | **6** | Actor-Critic Methods (Robotics) | ⬜ | [Link] | [Notes](units/006-Actor-Critic/README.md) |
-| **7** | Multi-Agent RL (Soccer) | ⬜ | [Link] | [Notes](units/007-Multi-Agent-RL/README.md) |
+| **7** | Multi-Agent RL (Soccer) | ⬜ | [poca-SoccerTwos](https://hf.coChiz/poca-SoccerTwos) | [Notes](units/007-Multi-Agent-RL/README.md) |
 | **8** | PPO Part 1: Theory & Implementation | ⬜ | [Link] | [Notes](units/008-PPO/README.md) |
 | **8b** | PPO Part 2: `VizDoom` | ⬜ | [Link] | [Notes](#) |
 | **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](units/009-Advanced-Topics-RL/README.md) |
