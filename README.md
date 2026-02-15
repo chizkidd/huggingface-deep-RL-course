@@ -25,7 +25,7 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **5** | Unity ML-Agents | ⬜ | [Link] | [Notes](units/005-Unity-ML-Agents/README.md) |
 | **6** | Actor-Critic Methods (Robotics) | ✅ | [a2c-PandaReachDense-v3](https://hf.co/Chiz/a2c-PandaReachDense-v3) | [Notes](units/006-Actor-Critic/README.md) |
 | **7** | Multi-Agent RL (Soccer) | ✅ | [poca-SoccerTwos](https://hf.coChiz/poca-SoccerTwos) | [Notes](units/007-Multi-Agent-RL/README.md) |
-| **8** | PPO Part 1: Theory & Implementation | ✅ | [ppo-LunarLander-v2](https://hf.co/Chiz/ppo-LunarLander-v2) | [Notes](units/008-PPO/README.md) |
+| **8** | PPO Part 1: Theory & Implementation | ⏳ | [ppo-LunarLander-v2](https://hf.co/Chiz/ppo-LunarLander-v2) | [Notes](units/008-PPO/README.md) |
 | **8b** | PPO Part 2: `VizDoom` | ⬜ | [Link] | [Notes](units/008b-PPO-2/README.md) |
 | **9** | **Bonus:** Advanced Topics in RL | ⬜ | [Link] | [Notes](units/009-Advanced-Topics-RL/README.md) |
 | **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | [Link] | [Notes](units/010-Imitation-Learning/README.md) |
