@@ -1,11 +1,56 @@
 # Unit 7: Multi-Agent Reinforcement Learning (MARL)
 
-## Table of Contents
-1. [Introduction](#1-introduction)
-2. [Introduction to Multi-Agent Reinforcement Learning](#2-introduction-to-multi-agent-reinforcement-learning)
-3. [Designing Multi-Agent Systems](#3-designing-multi-agent-systems)
-4. [Self-Play](#4-self-play)
-5. [Glossary](#5-glossary)
+# Table of Contents — Unit 7: Multi-Agent Reinforcement Learning (MARL)
+
+## [1. Introduction](#1-introduction)
+- 1.1 [From Single-Agent to Multi-Agent Learning](#11-from-single-agent-to-multi-agent-learning)
+- 1.2 [The Multi-Agent Reality](#12-the-multi-agent-reality)
+- 1.3 [What We'll Learn](#13-what-well-learn)
+- 1.4 [Course Maintenance Note](#14-course-maintenance-note)
+
+## [2. Introduction to Multi-Agent Reinforcement Learning](#2-introduction-to-multi-agent-reinforcement-learning)
+- 2.1 [Single-Agent vs. Multi-Agent Settings](#21-single-agent-vs-multi-agent-settings)
+- 2.2 [Examples of Multi-Agent Environments](#22-examples-of-multi-agent-environments)
+- 2.3 [Types of Multi-Agent Environments](#23-types-of-multi-agent-environments)
+- 2.4 [Key Differences from Single-Agent RL](#24-key-differences-from-single-agent-rl)
+
+## [3. Designing Multi-Agent Systems](#3-designing-multi-agent-systems)
+- 3.1 [The Two Approaches](#31-the-two-approaches)
+- 3.2 [Decentralized System (Independent Learners)](#32-decentralized-system-independent-learners)
+- 3.3 [Centralized Approach](#33-centralized-approach)
+- 3.4 [Hybrid Approaches](#34-hybrid-approaches)
+- 3.5 [Comparison Summary](#35-comparison-summary)
+
+## [4. Self-Play](#4-self-play)
+- 4.1 [The Challenge of Adversarial Training](#41-the-challenge-of-adversarial-training)
+- 4.2 [What is Self-Play?](#42-what-is-self-play)
+- 4.3 [Self-Play Algorithm](#43-self-play-algorithm)
+- 4.4 [Self-Play in ML-Agents](#44-self-play-in-ml-agents)
+- 4.5 [Historical Context](#45-historical-context)
+- 4.6 [The ELO Rating System](#46-the-elo-rating-system)
+- 4.7 [Self-Play Best Practices](#47-self-play-best-practices)
+
+## [5. Glossary](#5-glossary)
+- 5.1 [Core MARL Concepts](#51-core-marl-concepts)
+- 5.2 [Environment Types](#52-environment-types)
+- 5.3 [Training Approaches](#53-training-approaches)
+- 5.4 [Game Theory Concepts](#54-game-theory-concepts)
+- 5.5 [Self-Play](#55-self-play)
+- 5.6 [Evaluation Metrics](#56-evaluation-metrics)
+- 5.7 [Challenges in MARL](#57-challenges-in-marl)
+- 5.8 [Algorithms and Techniques](#58-algorithms-and-techniques)
+- 5.9 [ML-Agents Specific](#59-ml-agents-specific)
+- 5.10 [Key Equations Summary](#510-key-equations-summary)
+
+## [References](#references)
+
+---
+
+**Total Sections:** 5 main + References  
+**Total Subsections:** 36 detailed entries  
+**Key Equations:** 6+ core formulas  
+**Comparison Tables:** 3 (Single vs Multi-Agent, Environment Types, Approaches)  
+**Worked Examples:** 2 (ELO calculations, Vacuum cleaners)
 
 ---
 
