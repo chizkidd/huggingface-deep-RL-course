@@ -72,7 +72,7 @@ $$L^{CPI}(\theta) = \hat{E}_t [ \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_
 ### The Final Objective Function
 Similar to A2C, PPO combines the policy loss, value loss, and entropy:
 
-$$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi_\theta](s_t) ]$$
+$$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi\_\theta](s\_t) ]$$
 
 * $L_t^{VF}$: Value function (Critic) error (MSE).
 * $S$: Entropy bonus to encourage exploration.
@@ -80,7 +80,7 @@ $$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_
 * $\hat{\mathbb{E}}_t$: The empirical expectation over a finite batch of samples.
 * $L^{CLIP}_t(\theta)$: The clipped surrogate policy objective (moves the Actor).
 * $c_1 L^{VF}_t(\theta)$: The value function loss (updates the Critic to minimize error).
-* $c_2 S[\pi_\theta](s_t)$: The entropy bonus (encourages exploration by penalizing a deterministic policy).
+* $c_2 S[\pi\_\theta](s\_t)$: The entropy bonus (encourages exploration by penalizing a deterministic policy).
 
 ---
 
