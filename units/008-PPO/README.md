@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Introduction](#81-introduction)
 2. [The Intuition Behind PPO](#82-intuition-behind-ppo)
-3. [The Clipped Surrogate Objective](#83-clipped-surrogate-objective)
+3. [The Clipped Surrogate Objective](#83-the-clipped-surrogate-objective)
     * [The Probability Ratio](#the-probability-ratio)
     * [The Clipping Mechanism](#the-clipping-mechanism)
     * [The Final Objective Function](#the-final-objective-function)
