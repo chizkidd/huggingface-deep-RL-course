@@ -74,7 +74,25 @@ Similar to A2C, PPO combines the policy loss, value loss, and entropy:
 
 $$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi\_\theta](s\_t) ]$$
 
-$$L_t^{PPO}(\theta) = \hat{\mathbb{E}}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi_\theta](s_t) ]$$
+$$L_t^{PPO}(\theta)$$
+
+$$\hat{\mathbb{E}}_t$$
+
+$$L_t^{CLIP}(\theta)$$
+
+$$c_1 L_t^{VF}(\theta)$$
+
+$$c_2 S[\pi_\theta](s_t)$$
+
+$$c_2 S[\pi_\theta](s\_t)$$
+
+$$S[\pi_\theta](s\_t)$$
+
+$$(s\_t)$$
+
+$$S[\pi_\theta]$$
+
+$$c_2$$
 
 * $L_t^{VF}$: Value function (Critic) error (MSE).
 * $S$: Entropy bonus to encourage exploration.
