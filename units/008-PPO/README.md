@@ -72,7 +72,7 @@ $$L^{CPI}(\theta) = \hat{E}_t [ \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_
 ### The Final Objective Function
 Similar to A2C, PPO combines the policy loss, value loss, and entropy:
 
-$$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi\_\theta](s_{t}) ]$$
+$$L_t^{PPO}(\theta) = \hat{E}_t [ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi\_\theta] (s_t) ]$$
 
 $$L_t^{PPO}(\theta)$$
 
