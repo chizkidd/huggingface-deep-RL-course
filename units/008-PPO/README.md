@@ -56,10 +56,12 @@ $$r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}$$
 If we simply maximize $r_t(\theta) \hat{A}_t$, the update could be massive. PPO "clips" this ratio to be within a small interval (usually $[0.8, 1.2]$), defined by a hyperparameter $\epsilon$.
 
 The **Clipped Surrogate Objective** is:
-$$L^{CLIP}(\theta) = \hat{E}_t [ \min(r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t) ]$$
+
+$$L^{CLIP}(\theta) = \hat{E}_t [ \min(r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta) 1-\epsilon, 1+\epsilon) \hat{A}_t) ]$$
 
 The unclipped part of the CLipped Surrogate objective called **Conservative Policy Iteration** is:
-$$L^{CPI}(\theta) = \hat{E}_t [ \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)} \hat{A}_t ] = \hat{E}_t [r_t(\theta) \hat{A}_t) ]$$
+
+$$L^{CPI}(\theta) = \hat{E}_t [ \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)} \hat{A}_t ] = \hat{E}_t [r_t(\theta) \hat{A}_t]$$
 
 **How it works:**
 1. **Positive Advantage ($\hat{A}_t > 0$):** The action was better than average. We want to increase its probability, but we stop increasing it once the ratio $r_t(\theta)$ exceeds $1+\epsilon$.
