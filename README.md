@@ -29,8 +29,8 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **7** | Multi-Agent RL & AI  vs AI (Soccer) | ✅ | [poca-SoccerTwos](https://hf.coChiz/poca-SoccerTwos) | [Notes](units/007-Multi-Agent-RL/README.md) |
 | **8** | PPO Part 1: Theory & Implementation | ✅ | [ppo-LunarLander-v3-02](https://hf.co/Chiz/ppo-LunarLander-v3-02) | [Notes](units/008-PPO/README.md) |
 | **8b** | PPO Part 2: `VizDoom` | ✅ | [vizdoom](https://huggingface.co/Chiz/rl_course_vizdoom_health_gathering_supreme) | [Notes](units/008-PPO/README.md) |
-| **9** | **Bonus:** Advanced Topics in RL | ⬜ | - | [Notes](units/009-Advanced-Topics-RL/README.md) |
-| **10** | **Bonus:** Imitation Learning (`Godot`) | ⬜ | - | [Notes](units/010-Imitation-Learning/README.md) |
+| **9** | **Bonus:** Advanced Topics in RL | 🏗️ | - | [Notes](units/009-Advanced-Topics-RL/README.md) |
+| **10** | **Bonus:** Imitation Learning (`Godot`) | 🏗️ | - | [Notes](units/010-Imitation-Learning/README.md) |
 
 
 Almost done ...
