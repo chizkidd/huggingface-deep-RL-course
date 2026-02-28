@@ -26,7 +26,7 @@ This repository documents my journey through the [Hugging Face Deep Reinforcemen
 | **4** | Policy Gradients (`CartPole-v1`) | ✅ | [Reinforce-CartPole-v2](https://hf.co/Chiz/Reinforce-CartPole-v2),<br> [Pixelcopter-PLE-v0](https://hf.co/Chiz/Reinforce-Pixelcopter-PLE-v0) | [Notes](units/004-Policy-Gradients/README.md) |
 | **5** | Unity ML-Agents | ✅ | [ppo-SnowballTarget](https://hf.co/Chiz/ppo-SnowballTarget)<br>[ppo-Pyramids](https://hf.co/Chiz/ppo-Pyramids) | [Notes](units/005-Unity-ML-Agents/README.md) |
 | **6** | Actor-Critic Methods (Robotics) | ✅ | [a2c-PandaReachDense-v3](https://hf.co/Chiz/a2c-PandaReachDense-v3) | [Notes](units/006-Actor-Critic/README.md) |
-| **7** | Multi-Agent RL (Soccer) | ✅ | [poca-SoccerTwos](https://hf.coChiz/poca-SoccerTwos) | [Notes](units/007-Multi-Agent-RL/README.md) |
+| **7** | Multi-Agent RL & AI  vs AI (Soccer) | ✅ | [poca-SoccerTwos](https://hf.coChiz/poca-SoccerTwos) | [Notes](units/007-Multi-Agent-RL/README.md) |
 | **8** | PPO Part 1: Theory & Implementation | ✅ | [ppo-LunarLander-v3-02](https://hf.co/Chiz/ppo-LunarLander-v3-02) | [Notes](units/008-PPO/README.md) |
 | **8b** | PPO Part 2: `VizDoom` | ✅ | [vizdoom](https://huggingface.co/Chiz/rl_course_vizdoom_health_gathering_supreme) | [Notes](units/008-PPO/README.md) |
 | **9** | **Bonus:** Advanced Topics in RL | ⬜ | - | [Notes](units/009-Advanced-Topics-RL/README.md) |
