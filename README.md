@@ -1,4 +1,6 @@
-![Sanitizer Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/clean_notebooks.yml/badge.svg)
+[![Notebooks Sanitizer Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/clean-notebooks.yml/badge.svg)](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/clean-notebooks.yml)
+[![Notebooks Deployment Status](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/deploy-notebooks.yml/badge.svg)](https://github.com/chizkidd/huggingface-deep-RL-course/actions/workflows/deploy-notebooks.yml)
+[![View Notebooks](https://img.shields.io/badge/View-Live%20Notebooks-blue?logo=github)](https://chizkidd.github.io/huggingface-deep-RL-course/)
 
 # Hugging Face Deep RL Course 
 
